@@ -15,6 +15,8 @@
 		CF6DA04F158EDC7F00A04328 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA04E158EDC7F00A04328 /* AppDelegate.m */; };
 		CF6DA05B158EDCC000A04328 /* SimpleRect.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA05A158EDCC000A04328 /* SimpleRect.m */; };
 		CF6DA05E158EFBBC00A04328 /* Transform_01.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA05D158EFBBC00A04328 /* Transform_01.m */; };
+		CF6DA061158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA060158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m */; };
+		CF6DA064158F046D00A04328 /* DashLineRect.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA063158F046D00A04328 /* DashLineRect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		CF6DA05A158EDCC000A04328 /* SimpleRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleRect.m; sourceTree = "<group>"; };
 		CF6DA05C158EFBBC00A04328 /* Transform_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform_01.h; sourceTree = "<group>"; };
 		CF6DA05D158EFBBC00A04328 /* Transform_01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transform_01.m; sourceTree = "<group>"; };
+		CF6DA05F158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintWithAlphaAndRotateTransform.h; sourceTree = "<group>"; };
+		CF6DA060158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintWithAlphaAndRotateTransform.m; sourceTree = "<group>"; };
+		CF6DA062158F046D00A04328 /* DashLineRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashLineRect.h; sourceTree = "<group>"; };
+		CF6DA063158F046D00A04328 /* DashLineRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashLineRect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,10 @@
 				CF6DA05A158EDCC000A04328 /* SimpleRect.m */,
 				CF6DA05C158EFBBC00A04328 /* Transform_01.h */,
 				CF6DA05D158EFBBC00A04328 /* Transform_01.m */,
+				CF6DA05F158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.h */,
+				CF6DA060158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m */,
+				CF6DA062158F046D00A04328 /* DashLineRect.h */,
+				CF6DA063158F046D00A04328 /* DashLineRect.m */,
 			);
 			name = primitives;
 			sourceTree = "<group>";
@@ -173,6 +183,8 @@
 				CF6DA04F158EDC7F00A04328 /* AppDelegate.m in Sources */,
 				CF6DA05B158EDCC000A04328 /* SimpleRect.m in Sources */,
 				CF6DA05E158EFBBC00A04328 /* Transform_01.m in Sources */,
+				CF6DA061158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m in Sources */,
+				CF6DA064158F046D00A04328 /* DashLineRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "SimpleRect.h"
+#import "Transform_01.h"
+#import "PaintWithAlphaAndRotateTransform.h"
+#import "DashLineRect.h"
 
 @implementation AppDelegate
 
@@ -29,7 +32,19 @@
     
     SimpleRect *simpleRect = [[[SimpleRect alloc] init] autorelease];
     simpleRect.frame = CGRectMake(20, 40, 200, 300);
-    [self.window addSubview:simpleRect];
+//    [self.window addSubview:simpleRect];
+    
+    Transform_01 *t = [[[Transform_01 alloc] init] autorelease];
+    t.frame = CGRectMake(0, 0, self.window.frame.size.width, self.window.frame.size.height);
+//    [self.window addSubview:t];
+    
+    PaintWithAlphaAndRotateTransform *p = [[[PaintWithAlphaAndRotateTransform alloc] init] autorelease];
+    p.frame = self.window.bounds;
+//    [self.window addSubview:p];
+    
+    DashLineRect *d = [[[DashLineRect alloc] init] autorelease];
+    d.frame = self.window.bounds;
+    [self.window addSubview:d];
     
     return YES;
 }
