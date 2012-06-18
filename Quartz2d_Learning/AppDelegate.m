@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "SimpleRect.h"
 
 @implementation AppDelegate
 
@@ -24,6 +25,12 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    SimpleRect *simpleRect = [[[SimpleRect alloc] init] autorelease];
+    simpleRect.frame = CGRectMake(20, 40, 50, 50);
+    [self.window addSubview:simpleRect];
+    
     return YES;
 }
 
