@@ -28,7 +28,7 @@
     
     
     SimpleRect *simpleRect = [[[SimpleRect alloc] init] autorelease];
-    simpleRect.frame = CGRectMake(20, 40, 50, 50);
+    simpleRect.frame = CGRectMake(20, 40, 200, 300);
     [self.window addSubview:simpleRect];
     
     return YES;
