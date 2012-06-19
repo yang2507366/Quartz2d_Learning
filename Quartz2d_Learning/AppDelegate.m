@@ -23,6 +23,34 @@
     [super dealloc];
 }
 
+- (UIImage *)createImage:(CGRect)rect
+{
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL, 
+                                                 rect.size.width, 
+                                                 rect.size.height, 
+                                                 8, 
+                                                 4 * rect.size.width, 
+                                                 colorSpace, 
+                                                 kCGImageAlphaPremultipliedFirst
+                                                 );
+    CGContextSetShouldAntialias(context, YES);
+    CGContextSetRGBFillColor(context, 0.0f, 0.0f, 1.0f, 1.0f);
+    CGContextFillRect(context, rect);
+    
+    CGContextBeginPath(context);
+    CGContextAddArc(context, rect.size.width / 2, rect.size.height / 2, rect.size.width / 2, 0.0f, 2 * M_PI, 0);
+    CGContextSetRGBFillColor(context, 0.0f, 1.0f, 0.0f, 1.0f);
+    CGContextDrawPath(context, kCGPathFill);
+    
+    CGImageRef imgRef = CGBitmapContextCreateImage(context);
+    
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    
+    return [UIImage imageWithCGImage:imgRef];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -48,7 +76,12 @@
 //    [self.window addSubview:d];
     ClippingDrawing *c = [[[ClippingDrawing alloc] init] autorelease];
     c.frame = self.window.bounds;
-    [self.window addSubview:c];
+//    [self.window addSubview:c];
+    
+    UIImageView *imgView = [[[UIImageView alloc] init] autorelease];
+    [self.window addSubview:imgView];
+    imgView.frame = CGRectMake(20, 40, 50, 50);
+    imgView.image = [self createImage:imgView.bounds];
     
     return YES;
 }
