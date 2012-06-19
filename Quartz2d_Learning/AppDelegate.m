@@ -11,6 +11,7 @@
 #import "Transform_01.h"
 #import "PaintWithAlphaAndRotateTransform.h"
 #import "DashLineRect.h"
+#import "ClippingDrawing.h"
 
 @implementation AppDelegate
 
@@ -44,7 +45,10 @@
     
     DashLineRect *d = [[[DashLineRect alloc] init] autorelease];
     d.frame = self.window.bounds;
-    [self.window addSubview:d];
+//    [self.window addSubview:d];
+    ClippingDrawing *c = [[[ClippingDrawing alloc] init] autorelease];
+    c.frame = self.window.bounds;
+    [self.window addSubview:c];
     
     return YES;
 }

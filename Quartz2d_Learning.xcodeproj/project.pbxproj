@@ -17,6 +17,7 @@
 		CF6DA05E158EFBBC00A04328 /* Transform_01.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA05D158EFBBC00A04328 /* Transform_01.m */; };
 		CF6DA061158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA060158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m */; };
 		CF6DA064158F046D00A04328 /* DashLineRect.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6DA063158F046D00A04328 /* DashLineRect.m */; };
+		CFBEE0C5159076EE0004871C /* ClippingDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBEE0C4159076ED0004871C /* ClippingDrawing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		CF6DA060158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintWithAlphaAndRotateTransform.m; sourceTree = "<group>"; };
 		CF6DA062158F046D00A04328 /* DashLineRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashLineRect.h; sourceTree = "<group>"; };
 		CF6DA063158F046D00A04328 /* DashLineRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashLineRect.m; sourceTree = "<group>"; };
+		CFBEE0C3159076ED0004871C /* ClippingDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClippingDrawing.h; sourceTree = "<group>"; };
+		CFBEE0C4159076ED0004871C /* ClippingDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClippingDrawing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				CF6DA060158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m */,
 				CF6DA062158F046D00A04328 /* DashLineRect.h */,
 				CF6DA063158F046D00A04328 /* DashLineRect.m */,
+				CFBEE0C3159076ED0004871C /* ClippingDrawing.h */,
+				CFBEE0C4159076ED0004871C /* ClippingDrawing.m */,
 			);
 			name = primitives;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				CF6DA05E158EFBBC00A04328 /* Transform_01.m in Sources */,
 				CF6DA061158EFFEC00A04328 /* PaintWithAlphaAndRotateTransform.m in Sources */,
 				CF6DA064158F046D00A04328 /* DashLineRect.m in Sources */,
+				CFBEE0C5159076EE0004871C /* ClippingDrawing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +294,7 @@
 				CF6DA054158EDC7F00A04328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
