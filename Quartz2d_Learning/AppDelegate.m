@@ -12,6 +12,7 @@
 #import "PaintWithAlphaAndRotateTransform.h"
 #import "DashLineRect.h"
 #import "ClippingDrawing.h"
+#import "ScreenTestView.h"
 
 @implementation AppDelegate
 
@@ -79,7 +80,7 @@
 //    [self.window addSubview:c];
     
     UIImageView *imgView = [[[UIImageView alloc] init] autorelease];
-    [self.window addSubview:imgView];
+//    [self.window addSubview:imgView];
     imgView.frame = CGRectMake(20, 40, 50, 50);
     imgView.image = [self createImage:imgView.bounds];
     
@@ -89,6 +90,9 @@
     int blue = (hexColor & 0xFF);
     
     NSLog(@"%f, %f, %f", ((float)red) / 255.0f, ((float)green) / 255.0f, ((float)blue) / 255.0f);
+    
+    ScreenTestView *v = [[[ScreenTestView alloc] init] autorelease];
+    [self.window addSubview:v];
     
     return YES;
 }
