@@ -13,6 +13,13 @@
 #import "DashLineRect.h"
 #import "ClippingDrawing.h"
 #import "ScreenTestView.h"
+#import "ChatEmotionSelectView.h"
+#import "ChatEmotionManager.h"
+#import "ChatEmotion.h"
+
+@interface AppDelegate () <ChatEmotionSelectViewDelegate>
+
+@end
 
 @implementation AppDelegate
 
@@ -102,6 +109,21 @@
 //    }
 //    [str appendFormat:@"</array>"];
 //    NSLog(@"%@", str);
+    NSArray *emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
+    for(NSInteger i = 0; i < emotionCategoryList.count; ++i){
+        ChatEmotionSelectView *csv = [[[ChatEmotionSelectView alloc] initWithFrame:CGRectMake(0, i * 120 + 40, 320, 120)] autorelease];
+        csv.delegate = self;
+        NSArray *chatEmtionList = [ChatEmotionManager chatEmotionListForCategoryName:[emotionCategoryList objectAtIndex:i]];
+        NSLog(@"%@", chatEmtionList);
+        NSMutableArray *imageList = [NSMutableArray array];
+        for(NSInteger j = 0; j < chatEmtionList.count; ++j){
+            ChatEmotion *ce = [chatEmtionList objectAtIndex:j];
+            [imageList addObject:ce.imageName];
+        }
+        csv.emotionList = imageList;
+        [self.window addSubview:csv];
+        [self.window addSubview:csv];
+    }
     
     return YES;
 }

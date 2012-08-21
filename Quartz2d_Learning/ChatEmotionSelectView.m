@@ -50,13 +50,11 @@
     self.numberOfColumns = COLUMN_CAPACITY;
     self.numberOfRows = ROW_CAPACITY;
     
-    self.isTextEmotion = YES;
-    
     self.carousel = [[[iCarousel alloc] initWithFrame:self.bounds] autorelease];
     [self addSubview:self.carousel];
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
-    self.carousel.decelerationRate = 0.60f;
+    self.carousel.decelerationRate = 0.40f;
     self.carousel.backgroundColor = [UIColor clearColor];
     
     return self;
