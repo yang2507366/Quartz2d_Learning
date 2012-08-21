@@ -13,16 +13,14 @@
 @protocol ChatEmotionSelectViewDelegate <NSObject>
 
 @optional
-- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView 
-  didSelectEmotionAtPageIndex:(NSInteger)pageIndex 
-                          row:(NSInteger)row 
-                       column:(NSInteger)column;
+- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index;
 
 @end
 
 @interface ChatEmotionSelectView : UIView 
 
 @property(nonatomic, assign)id<ChatEmotionSelectViewDelegate> delegate;
+@property(nonatomic, copy)NSString *title;
 @property(nonatomic, assign)BOOL isTextEmotion;
 @property(nonatomic, retain)NSArray *emotionList;
 @property(nonatomic, assign)NSInteger numberOfRows;

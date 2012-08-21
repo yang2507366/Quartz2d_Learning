@@ -22,6 +22,7 @@
 @implementation ChatEmotionSelectView
 
 @synthesize delegate;
+@synthesize title;
 @synthesize isTextEmotion;
 @synthesize emotionList;
 @synthesize numberOfRows;
@@ -31,6 +32,7 @@
 
 - (void)dealloc
 {
+    self.title = nil;
     [self.emotionList release];
     self.carousel = nil;
     [super dealloc];
@@ -93,7 +95,9 @@
 #pragma mark - events
 - (void)onEmotionItemTapped:(UIButton *)btn
 {
-    NSLog(@"%@", [self.emotionList objectAtIndex:btn.tag]);
+    if([self.delegate respondsToSelector:@selector(chatEmotionSelectView:didSelectEmotionAtIndex:)]){
+        [self.delegate chatEmotionSelectView:self didSelectEmotionAtIndex:btn.tag];
+    }
 }
 
 #pragma mark - iCarouselDelegate

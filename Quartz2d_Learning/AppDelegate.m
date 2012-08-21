@@ -113,6 +113,7 @@
     for(NSInteger i = 0; i < emotionCategoryList.count; ++i){
         ChatEmotionSelectView *csv = [[[ChatEmotionSelectView alloc] initWithFrame:CGRectMake(0, i * 120 + 40, 320, 120)] autorelease];
         csv.delegate = self;
+        csv.title = [emotionCategoryList objectAtIndex:i];
         NSArray *chatEmtionList = [ChatEmotionManager chatEmotionListForCategoryName:[emotionCategoryList objectAtIndex:i]];
         NSLog(@"%@", chatEmtionList);
         NSMutableArray *imageList = [NSMutableArray array];
@@ -124,8 +125,15 @@
         [self.window addSubview:csv];
         [self.window addSubview:csv];
     }
-    
     return YES;
+}
+
+#pragma mark - ChatEmotionSelectViewDelegate
+- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index
+{
+    ChatEmotion *ce = [[ChatEmotionManager chatEmotionListForCategoryName:chatEmoSelectView.title] objectAtIndex:index];
+    NSLog(@"%@:%@", chatEmoSelectView.title, ce.symbol);
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
