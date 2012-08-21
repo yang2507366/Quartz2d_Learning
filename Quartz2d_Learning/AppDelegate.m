@@ -84,15 +84,24 @@
     imgView.frame = CGRectMake(20, 40, 50, 50);
     imgView.image = [self createImage:imgView.bounds];
     
-    int hexColor = 0xb3b373;
-    int red = (hexColor) >> 16;
-    int green = (hexColor & 0xFF00) >> 8;
-    int blue = (hexColor & 0xFF);
+//    int hexColor = 0xb3b373;
+//    int red = (hexColor) >> 16;
+//    int green = (hexColor & 0xFF00) >> 8;
+//    int blue = (hexColor & 0xFF);
+//    
+//    NSLog(@"%f, %f, %f", ((float)red) / 255.0f, ((float)green) / 255.0f, ((float)blue) / 255.0f);
     
-    NSLog(@"%f, %f, %f", ((float)red) / 255.0f, ((float)green) / 255.0f, ((float)blue) / 255.0f);
-    
-    ScreenTestView *v = [[[ScreenTestView alloc] init] autorelease];
-    [self.window addSubview:v];
+//    ScreenTestView *v = [[[ScreenTestView alloc] init] autorelease];
+//    [self.window addSubview:v];
+//    NSArray *symbolList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"symbol" ofType:@"plist"]];
+//    NSArray *imageList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image" ofType:@"plist"]];
+//    NSMutableString *str = [NSMutableString string];
+//    [str appendFormat:@"\n<array>\n"];
+//    for(NSInteger i = 42; i < symbolList.count; ++i){
+//        [str appendFormat:@"<dict>\n<key>%@</key>\n<string>%@</string>\n</dict>\n", [symbolList objectAtIndex:i], [imageList objectAtIndex:i]];
+//    }
+//    [str appendFormat:@"</array>"];
+//    NSLog(@"%@", str);
     
     return YES;
 }
