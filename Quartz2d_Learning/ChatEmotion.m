@@ -20,4 +20,9 @@
     [super dealloc];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@, %@", self.symbol, self.imageName];
+}
+
 @end

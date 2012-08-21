@@ -20,6 +20,7 @@
     
     return emotionList;
 }
+
 + (NSArray *)chatEmotionCategoryList
 {
     static NSArray *categoryList = nil;
@@ -35,6 +36,7 @@
     }
     return categoryList;
 }
+
 + (NSArray *)chatEmotionListForCategoryName:(NSString *)categoryName
 {
     NSArray *emotionList = [self emotionList];
@@ -54,6 +56,16 @@
         }
     }
     return nil;
+}
+
++ (NSDictionary *)chatEmotionDictionary
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    NSArray *emotionCategoryList = [self chatEmotionCategoryList];
+    for(NSString *category in emotionCategoryList){
+        [dict setObject:[self chatEmotionListForCategoryName:category] forKey:category];
+    }
+    return dict;
 }
 
 @end

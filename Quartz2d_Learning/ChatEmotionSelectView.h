@@ -14,6 +14,7 @@
 
 @optional
 - (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index;
+- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didChangeToPageIndex:(NSInteger)pageIndex;
 
 @end
 
@@ -25,5 +26,9 @@
 @property(nonatomic, retain)NSArray *emotionList;
 @property(nonatomic, assign)NSInteger numberOfRows;
 @property(nonatomic, assign)NSInteger numberOfColumns;
+@property(nonatomic, readonly)NSInteger pageSize;
+@property(nonatomic, readonly)NSInteger pageIndex;
+
+- (void)scrollToFirstPage;
 
 @end

@@ -28,6 +28,8 @@
 @synthesize normalBackgroundColor;
 @synthesize highlightBackgroundColor;
 
+@dynamic realWidth;
+
 @synthesize buttonList;
 
 - (void)dealloc
@@ -128,6 +130,11 @@
     }
     highlightBackgroundColor = [color retain];
     [self setNeedsLayout];
+}
+
+- (CGFloat)realWidth
+{
+    return self.indicatorSize * self.numberOfPages + self.spacing * (self.numberOfPages - 1);
 }
 
 @end

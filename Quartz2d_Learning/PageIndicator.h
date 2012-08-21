@@ -18,6 +18,8 @@
 @property(nonatomic, retain)UIColor *normalBackgroundColor;
 @property(nonatomic, retain)UIColor *highlightBackgroundColor;
 
+@property(nonatomic, readonly)CGFloat realWidth;
+
 - (id)initWithNumberOfPages:(NSInteger)numOfPages;
 
 @end

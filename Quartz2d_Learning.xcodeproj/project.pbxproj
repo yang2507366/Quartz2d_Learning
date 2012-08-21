@@ -106,6 +106,7 @@
 		67786E2115E34AFF00662187 /* ChatEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1D15E34AFF00662187 /* ChatEmotionView.m */; };
 		67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */; };
 		67786E2415E34B3C00662187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67786E2315E34B3C00662187 /* QuartzCore.framework */; };
+		67786EFC15E3B28E00662187 /* EmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786EFB15E3B28E00662187 /* EmotionView.m */; };
 		CF6DA03F158EDC7F00A04328 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6DA03E158EDC7F00A04328 /* UIKit.framework */; };
 		CF6DA041158EDC7F00A04328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6DA040158EDC7F00A04328 /* Foundation.framework */; };
 		CF6DA043158EDC7F00A04328 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6DA042158EDC7F00A04328 /* CoreGraphics.framework */; };
@@ -226,6 +227,8 @@
 		67786E1E15E34AFF00662187 /* ChatEmotionSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionSelectView.h; sourceTree = "<group>"; };
 		67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionSelectView.m; sourceTree = "<group>"; };
 		67786E2315E34B3C00662187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		67786EFA15E3B28E00662187 /* EmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionView.h; sourceTree = "<group>"; };
+		67786EFB15E3B28E00662187 /* EmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionView.m; sourceTree = "<group>"; };
 		CF6DA03A158EDC7F00A04328 /* Quartz2d_Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartz2d_Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6DA03E158EDC7F00A04328 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF6DA040158EDC7F00A04328 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -387,6 +390,8 @@
 				3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */,
 				3EC2CBF515E38E6A00545BC9 /* PageIndicator.h */,
 				3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */,
+				67786EFA15E3B28E00662187 /* EmotionView.h */,
+				67786EFB15E3B28E00662187 /* EmotionView.m */,
 			);
 			name = chatEmotion;
 			sourceTree = "<group>";
@@ -629,6 +634,7 @@
 				3EC2CBAB15E356F700545BC9 /* ChatEmotion.m in Sources */,
 				3EC2CBAE15E3574400545BC9 /* ChatEmotionManager.m in Sources */,
 				3EC2CBF715E38E6A00545BC9 /* PageIndicator.m in Sources */,
+				67786EFC15E3B28E00662187 /* EmotionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

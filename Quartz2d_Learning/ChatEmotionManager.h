@@ -12,5 +12,6 @@
 
 + (NSArray *)chatEmotionCategoryList;
 + (NSArray *)chatEmotionListForCategoryName:(NSString *)categoryName;
++ (NSDictionary *)chatEmotionDictionary;
 
 @end

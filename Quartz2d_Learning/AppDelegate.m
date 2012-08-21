@@ -17,8 +17,9 @@
 #import "ChatEmotionManager.h"
 #import "ChatEmotion.h"
 #import "PageIndicator.h"
+#import "EmotionView.h"
 
-@interface AppDelegate () <ChatEmotionSelectViewDelegate>
+@interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate>
 
 @end
 
@@ -110,32 +111,44 @@
 //    }
 //    [str appendFormat:@"</array>"];
 //    NSLog(@"%@", str);
-    NSArray *emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
-    for(NSInteger i = 0; i < emotionCategoryList.count; ++i){
-        ChatEmotionSelectView *csv = [[[ChatEmotionSelectView alloc] initWithFrame:CGRectMake(0, i * 120 + 40, 320, 120)] autorelease];
-        csv.delegate = self;
-        csv.title = [emotionCategoryList objectAtIndex:i];
-        NSArray *chatEmtionList = [ChatEmotionManager chatEmotionListForCategoryName:[emotionCategoryList objectAtIndex:i]];
-        NSLog(@"%@", chatEmtionList);
-        NSMutableArray *imageList = [NSMutableArray array];
-        for(NSInteger j = 0; j < chatEmtionList.count; ++j){
-            ChatEmotion *ce = [chatEmtionList objectAtIndex:j];
-            [imageList addObject:ce.imageName];
-        }
-        csv.emotionList = imageList;
-        [self.window addSubview:csv];
-        [self.window addSubview:csv];
-    }
-    
-    PageIndicator *pi = [[PageIndicator alloc] initWithNumberOfPages:5];
-    pi.frame = CGRectMake(10, 300, 200, 20);
-    [pi setCurrentPageIndex:2];
-    [pi setIndicatorSize:10];
-    [self.window addSubview:pi];
-    pi.normalBackgroundColor = [UIColor blackColor];
-    pi.highlightBackgroundColor = [UIColor redColor];
+//    NSArray *emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
+//    for(NSInteger i = 0; i < emotionCategoryList.count; ++i){
+//        ChatEmotionSelectView *csv = [[[ChatEmotionSelectView alloc] initWithFrame:CGRectMake(0, i * 120 + 40, 320, 120)] autorelease];
+//        csv.delegate = self;
+//        csv.title = [emotionCategoryList objectAtIndex:i];
+//        NSArray *chatEmtionList = [ChatEmotionManager chatEmotionListForCategoryName:[emotionCategoryList objectAtIndex:i]];
+//        NSLog(@"%@", chatEmtionList);
+//        NSMutableArray *imageList = [NSMutableArray array];
+//        for(NSInteger j = 0; j < chatEmtionList.count; ++j){
+//            ChatEmotion *ce = [chatEmtionList objectAtIndex:j];
+//            [imageList addObject:ce.imageName];
+//        }
+//        csv.emotionList = imageList;
+//        [self.window addSubview:csv];
+//        [self.window addSubview:csv];
+//    }
+//    
+//    PageIndicator *pi = [[PageIndicator alloc] initWithNumberOfPages:5];
+//    pi.frame = CGRectMake(10, 300, 200, 20);
+//    [pi setCurrentPageIndex:2];
+//    [pi setIndicatorSize:10];
+//    [self.window addSubview:pi];
+//    pi.normalBackgroundColor = [UIColor blackColor];
+//    pi.highlightBackgroundColor = [UIColor redColor];
+    EmotionView *emoView = [[EmotionView alloc] initWithFrame:CGRectMake(0, 20, 320, 210)];
+    emoView.emotionDictionary = [ChatEmotionManager chatEmotionDictionary];
+    emoView.emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
+    emoView.delegate = self;
+    emoView.backgroundColor = [UIColor darkGrayColor];
+    [self.window addSubview:emoView];
     
     return YES;
+}
+
+#pragma mark - EmotionViewDelegate
+- (void)emotionView:(EmotionView *)emoView didSelectEmotion:(ChatEmotion *)chatEmo
+{
+    NSLog(@"%@", chatEmo);
 }
 
 #pragma mark - ChatEmotionSelectViewDelegate

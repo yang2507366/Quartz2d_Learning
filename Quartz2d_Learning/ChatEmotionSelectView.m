@@ -27,6 +27,8 @@
 @synthesize emotionList;
 @synthesize numberOfRows;
 @synthesize numberOfColumns;
+@dynamic pageSize;
+@dynamic pageIndex;
 
 @synthesize carousel;
 
@@ -92,6 +94,26 @@
     [self.carousel reloadData];
 }
 
+- (NSInteger)pageSize
+{
+    NSInteger pageSize = self.emotionList.count / (self.numberOfRows * self.numberOfColumns);
+    if(self.emotionList.count % (self.numberOfRows * self.numberOfColumns)){
+        ++pageSize;
+    }
+    return pageSize;
+}
+
+- (NSInteger)pageIndex
+{
+    return self.carousel.currentItemIndex;
+}
+
+#pragma mark - instance methods
+- (void)scrollToFirstPage
+{
+    [self.carousel scrollToItemAtIndex:0 animated:NO];
+}
+
 #pragma mark - events
 - (void)onEmotionItemTapped:(UIButton *)btn
 {
@@ -103,11 +125,7 @@
 #pragma mark - iCarouselDelegate
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    NSInteger pageSize = self.emotionList.count / (self.numberOfRows * self.numberOfColumns);
-    if(self.emotionList.count % (self.numberOfRows * self.numberOfColumns)){
-        ++pageSize;
-    }
-    return pageSize;
+    return [self pageSize];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel_ viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
@@ -124,6 +142,13 @@
     chatEmoView.tag = index;
     [chatEmoView reloadView];
     return chatEmoView;
+}
+
+- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel_
+{
+    if([self.delegate respondsToSelector:@selector(chatEmotionSelectView:didChangeToPageIndex:)]){
+        [self.delegate chatEmotionSelectView:self didChangeToPageIndex:self.carousel.currentItemIndex];
+    }
 }
 
 #pragma mark - ChatEmotionViewDelegate
