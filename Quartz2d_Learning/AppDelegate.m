@@ -16,6 +16,7 @@
 #import "ChatEmotionSelectView.h"
 #import "ChatEmotionManager.h"
 #import "ChatEmotion.h"
+#import "PageIndicator.h"
 
 @interface AppDelegate () <ChatEmotionSelectViewDelegate>
 
@@ -125,6 +126,15 @@
         [self.window addSubview:csv];
         [self.window addSubview:csv];
     }
+    
+    PageIndicator *pi = [[PageIndicator alloc] initWithNumberOfPages:5];
+    pi.frame = CGRectMake(10, 300, 200, 20);
+    [pi setCurrentPageIndex:2];
+    [pi setIndicatorSize:10];
+    [self.window addSubview:pi];
+    pi.normalBackgroundColor = [UIColor blackColor];
+    pi.highlightBackgroundColor = [UIColor redColor];
+    
     return YES;
 }
 

@@ -101,6 +101,7 @@
 		3EC2CBA815E356C000545BC9 /* worry.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC2CB4F15E356C000545BC9 /* worry.png */; };
 		3EC2CBAB15E356F700545BC9 /* ChatEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBAA15E356F700545BC9 /* ChatEmotion.m */; };
 		3EC2CBAE15E3574400545BC9 /* ChatEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */; };
+		3EC2CBF715E38E6A00545BC9 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */; };
 		67786E2015E34AFF00662187 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1B15E34AFF00662187 /* iCarousel.m */; };
 		67786E2115E34AFF00662187 /* ChatEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1D15E34AFF00662187 /* ChatEmotionView.m */; };
 		67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */; };
@@ -216,6 +217,8 @@
 		3EC2CBAA15E356F700545BC9 /* ChatEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotion.m; sourceTree = "<group>"; };
 		3EC2CBAC15E3574400545BC9 /* ChatEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionManager.h; sourceTree = "<group>"; };
 		3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionManager.m; sourceTree = "<group>"; };
+		3EC2CBF515E38E6A00545BC9 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
+		3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
 		67786E1A15E34AFF00662187 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		67786E1B15E34AFF00662187 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		67786E1C15E34AFF00662187 /* ChatEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionView.h; sourceTree = "<group>"; };
@@ -382,6 +385,8 @@
 				3EC2CBAA15E356F700545BC9 /* ChatEmotion.m */,
 				3EC2CBAC15E3574400545BC9 /* ChatEmotionManager.h */,
 				3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */,
+				3EC2CBF515E38E6A00545BC9 /* PageIndicator.h */,
+				3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */,
 			);
 			name = chatEmotion;
 			sourceTree = "<group>";
@@ -623,6 +628,7 @@
 				67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */,
 				3EC2CBAB15E356F700545BC9 /* ChatEmotion.m in Sources */,
 				3EC2CBAE15E3574400545BC9 /* ChatEmotionManager.m in Sources */,
+				3EC2CBF715E38E6A00545BC9 /* PageIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
