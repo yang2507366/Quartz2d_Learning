@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67786E2015E34AFF00662187 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1B15E34AFF00662187 /* iCarousel.m */; };
+		67786E2115E34AFF00662187 /* ChatEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1D15E34AFF00662187 /* ChatEmotionView.m */; };
+		67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */; };
+		67786E2415E34B3C00662187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67786E2315E34B3C00662187 /* QuartzCore.framework */; };
 		CF6DA03F158EDC7F00A04328 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6DA03E158EDC7F00A04328 /* UIKit.framework */; };
 		CF6DA041158EDC7F00A04328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6DA040158EDC7F00A04328 /* Foundation.framework */; };
 		CF6DA043158EDC7F00A04328 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6DA042158EDC7F00A04328 /* CoreGraphics.framework */; };
@@ -22,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67786E1A15E34AFF00662187 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		67786E1B15E34AFF00662187 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		67786E1C15E34AFF00662187 /* ChatEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionView.h; sourceTree = "<group>"; };
+		67786E1D15E34AFF00662187 /* ChatEmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionView.m; sourceTree = "<group>"; };
+		67786E1E15E34AFF00662187 /* ChatEmotionSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionSelectView.h; sourceTree = "<group>"; };
+		67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionSelectView.m; sourceTree = "<group>"; };
+		67786E2315E34B3C00662187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CF6DA03A158EDC7F00A04328 /* Quartz2d_Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartz2d_Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF6DA03E158EDC7F00A04328 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF6DA040158EDC7F00A04328 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67786E2415E34B3C00662187 /* QuartzCore.framework in Frameworks */,
 				CF6DA03F158EDC7F00A04328 /* UIKit.framework in Frameworks */,
 				CF6DA041158EDC7F00A04328 /* Foundation.framework in Frameworks */,
 				CF6DA043158EDC7F00A04328 /* CoreGraphics.framework in Frameworks */,
@@ -60,9 +72,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67786E1815E34ADF00662187 /* chatEmotion */ = {
+			isa = PBXGroup;
+			children = (
+				67786E1A15E34AFF00662187 /* iCarousel.h */,
+				67786E1B15E34AFF00662187 /* iCarousel.m */,
+				67786E1C15E34AFF00662187 /* ChatEmotionView.h */,
+				67786E1D15E34AFF00662187 /* ChatEmotionView.m */,
+				67786E1E15E34AFF00662187 /* ChatEmotionSelectView.h */,
+				67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */,
+			);
+			name = chatEmotion;
+			sourceTree = "<group>";
+		};
 		CF6DA02F158EDC7F00A04328 = {
 			isa = PBXGroup;
 			children = (
+				67786E2315E34B3C00662187 /* QuartzCore.framework */,
 				CF6DA044158EDC7F00A04328 /* Quartz2d_Learning */,
 				CF6DA03D158EDC7F00A04328 /* Frameworks */,
 				CF6DA03B158EDC7F00A04328 /* Products */,
@@ -90,6 +116,7 @@
 		CF6DA044158EDC7F00A04328 /* Quartz2d_Learning */ = {
 			isa = PBXGroup;
 			children = (
+				67786E1815E34ADF00662187 /* chatEmotion */,
 				CF6DA055158EDC8D00A04328 /* primitives */,
 				CF6DA04D158EDC7F00A04328 /* AppDelegate.h */,
 				CF6DA04E158EDC7F00A04328 /* AppDelegate.m */,
@@ -197,6 +224,9 @@
 				CF6DA064158F046D00A04328 /* DashLineRect.m in Sources */,
 				CFBEE0C5159076EE0004871C /* ClippingDrawing.m in Sources */,
 				CF890BCC159AB9D200A88D4E /* ScreenTestView.m in Sources */,
+				67786E2015E34AFF00662187 /* iCarousel.m in Sources */,
+				67786E2115E34AFF00662187 /* ChatEmotionView.m in Sources */,
+				67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
