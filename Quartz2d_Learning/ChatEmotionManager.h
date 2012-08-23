@@ -13,5 +13,7 @@
 + (NSArray *)chatEmotionCategoryList;
 + (NSArray *)chatEmotionListForCategoryName:(NSString *)categoryName;
 + (NSDictionary *)chatEmotionDictionary;
++ (NSArray *)emotionSymbolList;
++ (NSString *)replaceChatMessage:(NSString *)msg;
 
 @end

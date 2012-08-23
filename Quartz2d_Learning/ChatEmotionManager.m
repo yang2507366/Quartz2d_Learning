@@ -8,6 +8,7 @@
 
 #import "ChatEmotionManager.h"
 #import "ChatEmotion.h"
+//#import "TimeTracker.h"
 
 @implementation ChatEmotionManager
 
@@ -66,6 +67,83 @@
         [dict setObject:[self chatEmotionListForCategoryName:category] forKey:category];
     }
     return dict;
+}
+
++ (NSArray *)emotionSymbolList
+{
+    NSMutableArray *symbolList = [NSMutableArray array];
+    NSArray *categoryList = [self.class chatEmotionCategoryList];
+    for(NSString *category in categoryList){
+        NSArray *emotionList = [self.class chatEmotionListForCategoryName:category];
+        for(ChatEmotion *emo in emotionList){
+            [symbolList addObject:emo.symbol];
+        }
+    }
+    return symbolList;
+}
+
++ (NSString *)imageNameForSymbol:(NSString *)symbol
+{
+    static NSDictionary *symbolImageDict = nil;
+    if(symbolImageDict == nil){
+        NSMutableDictionary *tmpSymbolImageDict = [NSMutableDictionary dictionary];
+        NSArray *categoryList = [self.class chatEmotionCategoryList];
+        for(NSString *category in categoryList){
+            NSArray *emotionList = [self.class chatEmotionListForCategoryName:category];
+            for(ChatEmotion *emo in emotionList){
+                [tmpSymbolImageDict setObject:emo.imageName forKey:emo.symbol];
+            }
+        }
+        symbolImageDict = [tmpSymbolImageDict retain];
+    }
+    return [symbolImageDict objectForKey:symbol];
+}
+
++ (NSString *)replaceChatMessage:(NSString *)msg
+{
+//    [[TimeTracker defaultTracker] markStartWithIdentifier:self];
+    static NSArray *bracketList = nil;
+    static NSArray *squareBracketsList = nil;
+    static NSArray *otherList = nil;
+    if(bracketList == nil){
+        NSArray *emotionSymbolList = [self.class emotionSymbolList];
+        NSMutableArray *tmpBracketList = [NSMutableArray array];
+        NSMutableArray *tmpSquareBracketsList = [NSMutableArray array];
+        NSMutableArray *tmpOtherList = [NSMutableArray array];
+        for(NSString *symbol in emotionSymbolList){
+            if([symbol hasPrefix:@"["]){
+                [tmpSquareBracketsList addObject:symbol];
+            }else if([symbol hasPrefix:@"("]){
+                [tmpBracketList addObject:symbol];
+            }else{
+                [tmpOtherList addObject:symbol];
+            }
+        }
+        bracketList = [tmpBracketList retain];
+        squareBracketsList = [tmpSquareBracketsList retain];
+        otherList = [tmpOtherList retain];
+    }
+    
+    NSMutableArray *tmpCheckList = [NSMutableArray arrayWithArray:otherList];
+    NSRange tmpRange = [msg rangeOfString:@"["];
+    if(tmpRange.location != NSNotFound){
+        tmpRange = [msg rangeOfString:@"]" options:NSCaseInsensitiveSearch range:NSMakeRange(tmpRange.location, msg.length - tmpRange.location)];
+        if(tmpRange.location != NSNotFound){
+            [tmpCheckList addObjectsFromArray:squareBracketsList];
+        }
+    }
+    tmpRange = [msg rangeOfString:@"("];
+    if(tmpRange.location != NSNotFound){
+        tmpRange = [msg rangeOfString:@")" options:NSCaseInsensitiveSearch range:NSMakeRange(tmpRange.location, msg.length - tmpRange.location)];
+        if(tmpRange.location != NSNotFound){
+            [tmpCheckList addObjectsFromArray:bracketList];
+        }
+    }
+    for(NSString *symbol in tmpCheckList){
+        msg = [msg stringByReplacingOccurrencesOfString:symbol withString:[NSString stringWithFormat:@"{IMG=%@}", [self imageNameForSymbol:symbol]]];
+    }
+//    NSLog(@"cost time:%f", [[TimeTracker defaultTracker] timeIntervalForIdentifier:self]);
+    return msg;
 }
 
 @end
