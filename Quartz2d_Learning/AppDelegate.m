@@ -19,6 +19,7 @@
 #import "PageIndicator.h"
 #import "EmotionView.h"
 #import "MsgLabel.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate>
 
@@ -143,15 +144,15 @@
 //    emoView.backgroundColor = [UIColor darkGrayColor];
 //    [self.window addSubview:emoView];
     NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
-    NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a"];
-//    msg = @"GDB is free software, covered by the GNU General Public License, and you are"
-//    "welcome to change it and/or distribute copies of it under certain conditions."
-//    "Type \"show copying\" to see the conditions.日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，涨价的幼儿园是按照法律规定并在向相关部门报备后调整，涨价符合法律规定";
+    NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，涨价的幼儿园是按照法律规定并在向相关部门报备后调整，涨价符合法律规定"];
     NSLog(@"%@", msg);
     MsgLabel *label = [[[MsgLabel alloc] init] autorelease];
     label.frame = CGRectMake(20, 40, 160, 0);
     label.msg = msg;
     label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor darkGrayColor];
+    label.layer.shadowOpacity = 1.0f;
+    label.layer.shadowRadius = 1.0f;
     [label fitToRealHeight];
     [self.window addSubview:label];
     

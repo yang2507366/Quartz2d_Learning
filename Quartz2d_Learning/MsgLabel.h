@@ -12,6 +12,7 @@
 
 @property(nonatomic, copy)NSString *msg;
 @property(nonatomic, retain)UIFont *font;
+@property(nonatomic, retain)UIColor *textColor;
 
 - (void)fitToRealHeight;
 

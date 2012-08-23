@@ -16,11 +16,13 @@
 
 @synthesize msg;
 @synthesize font;
+@synthesize textColor;
 
 - (void)dealloc
 {
     self.msg = nil;
     self.font = nil;
+    self.textColor = nil;
     [super dealloc];
 }
 
@@ -37,6 +39,7 @@
     
     self.font = [UIFont systemFontOfSize:14.0f];
     self.backgroundColor = [UIColor clearColor];
+    self.textColor = [UIColor blackColor];
     
     return self;
 }
@@ -46,7 +49,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
     CGContextFillRect(context, rect);
-    CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+    CGContextSetFillColorWithColor(context, self.textColor.CGColor);
     
     if(!self.msg){
         return;
