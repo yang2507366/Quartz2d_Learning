@@ -61,10 +61,13 @@
     self.currentCategoryIndex = -1;
     
     self.pageIndicator = [[[PageIndicator alloc] init] autorelease];
+    self.pageIndicator.indicatorSize = 5;
     [self addSubview:self.pageIndicator];
     
-    self.deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.deleteButton setTitle:@"删除" forState:UIControlStateNormal];
+    self.deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.deleteButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+    [self.deleteButton setBackgroundColor:[UIColor darkGrayColor]];
+    [self.deleteButton setTitle:@"DEL" forState:UIControlStateNormal];
     [self.deleteButton addTarget:self action:@selector(onDeleteButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.deleteButton];
     
@@ -74,8 +77,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    CGFloat deleteBtnWidth = 60;
-    CGFloat bototmBtnHeight = 40;
+    CGFloat deleteBtnWidth = 56;
+    CGFloat bototmBtnHeight = 54;
     CGFloat pageIndicatorHeight = 40;
     CGFloat switchBtnWidth = (self.frame.size.width - deleteBtnWidth) / emotionCategoryList.count;
     for(NSInteger i = 0; i < emotionCategoryList.count; ++i){
@@ -84,9 +87,9 @@
         
         UIButton *switchBtn = [self.switchButtonList objectAtIndex:i];
         switchBtn.frame = CGRectMake(switchBtnWidth * i, 
-                                     self.frame.size.height - bototmBtnHeight, 
+                                     self.frame.size.height - bototmBtnHeight + 1, 
                                      switchBtnWidth, 
-                                     bototmBtnHeight);
+                                     bototmBtnHeight - 1);
     }
     
     CGFloat pageIndicatorRealWidth = self.pageIndicator.realWidth;
@@ -127,7 +130,9 @@
     for(NSInteger i = 0; i < self.emotionCategoryList.count; ++i){
         NSString *category = [self.emotionCategoryList objectAtIndex:i];
         
-        UIButton *switchBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *switchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        switchBtn.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+        [switchBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [switchBtn setTitle:category forState:UIControlStateNormal];
         [switchBtn addTarget:self action:@selector(onSwitchBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
         switchBtn.tag = i;
@@ -167,12 +172,16 @@
     
     for(NSInteger i = 0; i < self.chatEmotionSelectViewList.count; ++i){
         ChatEmotionSelectView *view = [self.chatEmotionSelectViewList objectAtIndex:i];
-        view.hidden = self.currentCategoryIndex != i;
+        BOOL currentShow = self.currentCategoryIndex == i;
+        view.hidden = !currentShow;
         if(!view.hidden){
             [view scrollToFirstPage];
             self.pageIndicator.numberOfPages = view.pageSize;
             self.pageIndicator.currentPageIndex = 0;
         }
+        UIButton *switchBtn = [self.switchButtonList objectAtIndex:i];
+        UIColor *color = currentShow ? [UIColor whiteColor] : [UIColor lightGrayColor];
+        [switchBtn setBackgroundColor:color];
     }
     [self setNeedsLayout];
 }

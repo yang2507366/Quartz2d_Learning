@@ -59,7 +59,6 @@
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
     self.carousel.decelerationRate = 0.40f;
-    self.carousel.backgroundColor = [UIColor clearColor];
     
     return self;
 }
@@ -68,6 +67,7 @@
 {
     [super layoutSubviews];
     self.carousel.frame = self.bounds;
+    [self.carousel reloadData];
 }
 
 - (void)setEmotionList:(NSArray *)emotionList_
@@ -139,6 +139,7 @@
         chatEmoView.numberOfRows = self.numberOfRows;
         chatEmoView.numberOfColumns = self.numberOfColumns;
     }
+    chatEmoView.frame = carousel_.bounds;
     chatEmoView.tag = index;
     [chatEmoView reloadView];
     return chatEmoView;
