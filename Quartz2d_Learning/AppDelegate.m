@@ -161,6 +161,15 @@
     [self.window addSubview:switchView];
     switchView.titleList = [NSArray arrayWithObjects:@"周一", @"周2", @"周3", @"周四", @"周无",
                             nil];
+    UIView *containerView = [switchView containerViewForTitle:@"周一"];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 20)];
+    label.text = @"label";
+    [containerView addSubview:label];
+    
+    containerView = [switchView containerViewAtIndex:2];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(20, 20, 80, 30);
+    [containerView addSubview:button];
     
     return YES;
 }

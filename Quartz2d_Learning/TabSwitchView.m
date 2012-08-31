@@ -251,17 +251,17 @@
     self.switcher.frame = CGRectMake(0, 0, TITLE_WIDTH, self.bounds.size.height);
 }
 
-- (UIView *)viewForTitle:(NSString *)title
+- (UIView *)containerViewForTitle:(NSString *)title
 {
     NSUInteger index = [self.titleList indexOfObject:title];
     if(index != NSNotFound){
-        return [self viewAtIndex:index];
+        return [self containerViewAtIndex:index];
     }
     
     return nil;
 }
 
-- (UIView *)viewAtIndex:(NSInteger)index
+- (UIView *)containerViewAtIndex:(NSInteger)index
 {
     return [self.viewList objectAtIndex:index];
 }
@@ -282,7 +282,7 @@
     
     if(self.viewList){
         for(NSString *title in self.titleList){
-            UIView *view = [self viewForTitle:title];
+            UIView *view = [self containerViewForTitle:title];
             [view removeFromSuperview];
         }
     }

@@ -23,7 +23,7 @@
 @property(nonatomic, assign)NSInteger selectedIndex;
 @property(nonatomic, retain)NSArray *titleList;
 
-- (UIView *)viewForTitle:(NSString *)title;
-- (UIView *)viewAtIndex:(NSInteger)index;
+- (UIView *)containerViewForTitle:(NSString *)title;
+- (UIView *)containerViewAtIndex:(NSInteger)index;
 
 @end
