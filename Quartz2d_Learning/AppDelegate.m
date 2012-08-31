@@ -20,8 +20,9 @@
 #import "EmotionView.h"
 #import "MsgLabel.h"
 #import <QuartzCore/QuartzCore.h>
+#import "TabSwitchView.h"
 
-@interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate>
+@interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate, TabSwitchViewDelegate>
 
 @end
 
@@ -130,19 +131,19 @@
 //        [self.window addSubview:csv];
 //    }
 //    
-    PageIndicator *pi = [[PageIndicator alloc] initWithNumberOfPages:5];
-    pi.frame = CGRectMake(10, 300, 200, 20);
-    [pi setCurrentPageIndex:2];
-    [pi setIndicatorSize:10];
-    [self.window addSubview:pi];
-    pi.normalBackgroundColor = [UIColor blackColor];
-    pi.highlightBackgroundColor = [UIColor redColor];
-    EmotionView *emoView = [[EmotionView alloc] initWithFrame:CGRectMake(0, 20, 320, 210)];
-    emoView.emotionDictionary = [ChatEmotionManager chatEmotionDictionary];
-    emoView.emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
-    emoView.delegate = self;
-    emoView.backgroundColor = [UIColor darkGrayColor];
-    [self.window addSubview:emoView];
+//    PageIndicator *pi = [[PageIndicator alloc] initWithNumberOfPages:5];
+//    pi.frame = CGRectMake(10, 300, 200, 20);
+//    [pi setCurrentPageIndex:2];
+//    [pi setIndicatorSize:10];
+//    [self.window addSubview:pi];
+//    pi.normalBackgroundColor = [UIColor blackColor];
+//    pi.highlightBackgroundColor = [UIColor redColor];
+//    EmotionView *emoView = [[EmotionView alloc] initWithFrame:CGRectMake(0, 20, 320, 210)];
+//    emoView.emotionDictionary = [ChatEmotionManager chatEmotionDictionary];
+//    emoView.emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
+//    emoView.delegate = self;
+//    emoView.backgroundColor = [UIColor darkGrayColor];
+//    [self.window addSubview:emoView];
 //    NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
 //    NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，涨价的幼儿园是按照法律规定并在向相关部门报备后调整，涨价符合法律规定"];
 //    NSLog(@"%@", msg);
@@ -155,8 +156,18 @@
 //    label.layer.shadowRadius = 1.0f;
 //    [label fitToRealHeight];
 //    [self.window addSubview:label];
+    TabSwitchView *switchView = [[TabSwitchView alloc] initWithFrame:CGRectMake(20, 40, 280, 200)];
+    switchView.delegate = self;
+    [self.window addSubview:switchView];
+    switchView.titleList = [NSArray arrayWithObjects:@"周一", @"周2", @"周3", @"周四", @"周无",
+                            nil];
     
     return YES;
+}
+
+#pragma mark - TabSwitchViewDelegate
+- (void)tabSwitchView:(TabSwitchView *)switchView didChangeToIndex:(NSInteger)index
+{
 }
 
 #pragma mark - EmotionViewDelegate
