@@ -30,9 +30,9 @@
                                                  4 * imgWidth, 
                                                  colorSpace, 
                                                  kCGImageAlphaPremultipliedFirst);
-    CGContextBeginPath(context);
-    CGContextAddRect(context, CGRectMake(0, 0, clipRect.size.width * img.scale, clipRect.size.height * img.scale));
-    CGContextClip(context);
+//    CGContextBeginPath(context);
+//    CGContextAddRect(context, CGRectMake(0, 0, clipRect.size.width * img.scale, clipRect.size.height * img.scale));
+//    CGContextClip(context);
     
     CGContextDrawImage(context, 
                        CGRectMake(-clipRect.origin.x * img.scale, 
@@ -64,7 +64,7 @@
 //    CGContextClip(context);
     
     UIImage *img = [UIImage imageNamed:@"topbar-pop-bg.png"];
-    UIImage *clipImg = [self clipImage:img clipRect:CGRectMake(0, 0, 10, 20)];
+    UIImage *clipImg = [self clipImage:img clipRect:CGRectMake(0, 0, 40, 20)];
     [img drawAtPoint:CGPointMake(0, 0)];
     [clipImg drawAtPoint:CGPointMake(0, 100)];
 }
