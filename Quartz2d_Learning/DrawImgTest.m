@@ -48,6 +48,20 @@
     return resultImg;
 }
 
+- (UIImage *)clipImageN:(UIImage *)img inRect:(CGRect)rect
+{
+    CGRect tmpRect = rect;
+    tmpRect.origin.y = img.size.height - (tmpRect.origin.y + tmpRect.size.height);
+    tmpRect.size.width *= img.scale;
+    tmpRect.size.height *= img.scale;
+    rect = tmpRect;
+    
+    CGImageRef imgRef = CGImageCreateWithImageInRect(img.CGImage, rect);
+    UIImage *clipImg = [UIImage imageWithCGImage:imgRef scale:img.scale orientation:UIImageOrientationUp];
+    CGImageRelease(imgRef);
+    return clipImg;
+}
+
 - (UIImage *)strechImage:(UIImage *)img clipRect:(CGRect)clipRect toWidth:(CGFloat)width
 {
     return nil;
@@ -67,6 +81,8 @@
     UIImage *clipImg = [self clipImage:img clipRect:CGRectMake(0, 0, 40, 20)];
     [img drawAtPoint:CGPointMake(0, 0)];
     [clipImg drawAtPoint:CGPointMake(0, 100)];
+    [[self clipImageN:img inRect:CGRectMake(0, 0, 10, 20)] drawAtPoint:CGPointMake(100, 100)];
+    
 }
 
 @end
