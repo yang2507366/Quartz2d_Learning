@@ -157,22 +157,25 @@
 //    label.layer.shadowRadius = 1.0f;
 //    [label fitToRealHeight];
 //    [self.window addSubview:label];
-//    TabSwitchView *switchView = [[TabSwitchView alloc] initWithFrame:CGRectMake(20, 40, 280, 200)];
-//    switchView.delegate = self;
-//    [self.window addSubview:switchView];
-//    switchView.titleList = [NSArray arrayWithObjects:@"周一", @"周2", @"周3", @"周四", @"周无",
-//                            nil];
-//    UIView *containerView = [switchView containerViewForTitle:@"周一"];
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 20)];
-//    label.text = @"label";
-//    [containerView addSubview:label];
+    TabSwitchView *switchView = [[TabSwitchView alloc] initWithFrame:CGRectMake(20, 40, 280, 200)];
+    switchView.delegate = self;
+    [self.window addSubview:switchView];
+    switchView.titleList = [NSArray arrayWithObjects:@"周一", @"周2", @"周3", @"周四", @"周无",
+                            nil];
+    UIView *containerView = [switchView containerViewForTitle:@"周一"];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 20)];
+    label.text = @"label";
+    [containerView addSubview:label];
+    [switchView removeFromSuperview];
+    NSLog(@"%d", switchView.retainCount);
+    [switchView release];
 //    
 //    containerView = [switchView containerViewAtIndex:2];
 //    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 //    button.frame = CGRectMake(20, 20, 80, 30);
 //    [containerView addSubview:button];
-    DrawImgTest *test = [[DrawImgTest alloc] initWithFrame:CGRectMake(20, 40, 200, 200)];
-    [self.window addSubview:test];
+//    DrawImgTest *test = [[DrawImgTest alloc] initWithFrame:CGRectMake(20, 40, 200, 200)];
+//    [self.window addSubview:test];
     
     return YES;
 }
