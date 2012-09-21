@@ -72,6 +72,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+//    NSMutableArray *titleList = [NSMutableArray array];
+//
+//    va_list args;
+//    va_start(args, titles);
+//    id arg;
+//    while((arg = va_arg(args, NSString *))){
+//        [titleList addObject:arg];
+//    }
+//    va_end(args);
+
     
     SimpleRect *simpleRect = [[[SimpleRect alloc] init] autorelease];
     simpleRect.frame = CGRectMake(20, 40, 200, 300);
