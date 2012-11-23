@@ -22,6 +22,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TabSwitchView.h"
 #import "DrawImgTest.h"
+#import "PureRoundImageCreator.h"
 
 @interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate, TabSwitchViewDelegate>
 
@@ -103,9 +104,10 @@
 //    [self.window addSubview:c];
     
     UIImageView *imgView = [[[UIImageView alloc] init] autorelease];
-//    [self.window addSubview:imgView];
-    imgView.frame = CGRectMake(20, 40, 50, 50);
-    imgView.image = [self createImage:imgView.bounds];
+    [self.window addSubview:imgView];
+    imgView.frame = CGRectMake(20, 40, 120, 50);
+    imgView.backgroundColor = [UIColor blackColor];
+    imgView.image = [PureRoundImageCreator createPureColorRoundImageWithColor:[UIColor redColor] size:CGSizeMake(40, 50) roundSize:10];
     
 //    int hexColor = 0xb3b373;
 //    int red = (hexColor) >> 16;
