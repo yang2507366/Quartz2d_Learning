@@ -41,17 +41,23 @@ static void AddRoundedRectToPath(CGContextRef context, CGRect rect,
 
 + (UIImage *)createPureColorRoundImageWithColor:(UIColor *)color size:(CGSize)size roundSize:(CGFloat)roundSize
 {
+    CGFloat paintRoundSize = roundSize;
+    if([UIScreen mainScreen].scale > 1){
+        size = CGSizeMake(size.width * 2, size.height * 2);
+        paintRoundSize *= 2;
+    }
     UIGraphicsBeginImageContext(size);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextBeginPath(context);
-    AddRoundedRectToPath(context, CGRectMake(0, 0, size.width, size.height), roundSize, roundSize);
+    AddRoundedRectToPath(context, CGRectMake(0, 0, size.width, size.height), paintRoundSize, paintRoundSize);
     CGContextClosePath(context);
     CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillPath(context);
     
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
-    resultImage = [resultImage stretchableImageWithLeftCapWidth:roundSize topCapHeight:resultImage.size.height];
+    resultImage = [UIImage imageWithCGImage:resultImage.CGImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    resultImage = [resultImage stretchableImageWithLeftCapWidth:roundSize topCapHeight:0];
     UIGraphicsEndImageContext();
     return resultImage;
 }
