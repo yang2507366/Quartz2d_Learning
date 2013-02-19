@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E11E7A616D3160700CDD9E0 /* PageFilpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E11E7A516D3160700CDD9E0 /* PageFilpView.m */; };
+		3E11E7A916D316D200CDD9E0 /* BookShelfView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E11E7A816D316D200CDD9E0 /* BookShelfView.m */; };
+		3E11E7AD16D31E6C00CDD9E0 /* GridViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E11E7AC16D31E6C00CDD9E0 /* GridViewWrapper.m */; };
 		3E424A1615F49A1F00BDCAF8 /* DrawImgTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E424A1515F49A1F00BDCAF8 /* DrawImgTest.m */; };
 		3E424A1A15F49F1900BDCAF8 /* topbar-pop-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E424A1815F49F1900BDCAF8 /* topbar-pop-bg.png */; };
 		3E424A1B15F49F1900BDCAF8 /* topbar-pop-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E424A1915F49F1900BDCAF8 /* topbar-pop-bg@2x.png */; };
@@ -218,6 +221,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E11E7A416D3160700CDD9E0 /* PageFilpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageFilpView.h; sourceTree = "<group>"; };
+		3E11E7A516D3160700CDD9E0 /* PageFilpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageFilpView.m; sourceTree = "<group>"; };
+		3E11E7A716D316D200CDD9E0 /* BookShelfView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookShelfView.h; sourceTree = "<group>"; };
+		3E11E7A816D316D200CDD9E0 /* BookShelfView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShelfView.m; sourceTree = "<group>"; };
+		3E11E7AB16D31E6C00CDD9E0 /* GridViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewWrapper.h; sourceTree = "<group>"; };
+		3E11E7AC16D31E6C00CDD9E0 /* GridViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewWrapper.m; sourceTree = "<group>"; };
 		3E424A1415F49A1F00BDCAF8 /* DrawImgTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawImgTest.h; sourceTree = "<group>"; };
 		3E424A1515F49A1F00BDCAF8 /* DrawImgTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawImgTest.m; sourceTree = "<group>"; };
 		3E424A1815F49F1900BDCAF8 /* topbar-pop-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar-pop-bg.png"; sourceTree = "<group>"; };
@@ -726,6 +735,12 @@
 				3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */,
 				3E424A1415F49A1F00BDCAF8 /* DrawImgTest.h */,
 				3E424A1515F49A1F00BDCAF8 /* DrawImgTest.m */,
+				3E11E7A416D3160700CDD9E0 /* PageFilpView.h */,
+				3E11E7A516D3160700CDD9E0 /* PageFilpView.m */,
+				3E11E7A716D316D200CDD9E0 /* BookShelfView.h */,
+				3E11E7A816D316D200CDD9E0 /* BookShelfView.m */,
+				3E11E7AB16D31E6C00CDD9E0 /* GridViewWrapper.h */,
+				3E11E7AC16D31E6C00CDD9E0 /* GridViewWrapper.m */,
 			);
 			path = Quartz2d_Learning;
 			sourceTree = "<group>";
@@ -1029,6 +1044,9 @@
 				3EF1746C15F04ACB00B85BC5 /* TabSwitchView.m in Sources */,
 				3E424A1615F49A1F00BDCAF8 /* DrawImgTest.m in Sources */,
 				3EAB8CF8165F6EB4004533A6 /* PureRoundImageCreator.m in Sources */,
+				3E11E7A616D3160700CDD9E0 /* PageFilpView.m in Sources */,
+				3E11E7A916D316D200CDD9E0 /* BookShelfView.m in Sources */,
+				3E11E7AD16D31E6C00CDD9E0 /* GridViewWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,8 @@
 #import "TabSwitchView.h"
 #import "DrawImgTest.h"
 #import "PureRoundImageCreator.h"
+#import "PageFilpView.h"
+#import "BookShelfView.h"
 
 @interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate, TabSwitchViewDelegate>
 
@@ -108,6 +110,12 @@
     imgView.frame = CGRectMake(20, 40, 120, 50);
     imgView.backgroundColor = [UIColor blackColor];
     imgView.image = [PureRoundImageCreator createPureColorRoundImageWithColor:[UIColor redColor] size:CGSizeMake(40, 50) roundSize:10];
+    
+    PageFilpView *filpView = [[[PageFilpView alloc] initWithFrame:self.window.bounds] autorelease];
+    [self.window addSubview:filpView];
+    
+    BookShelfView *bookView = [[[BookShelfView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)] autorelease];
+    [self.window addSubview:bookView];
     
 //    int hexColor = 0xb3b373;
 //    int red = (hexColor) >> 16;
