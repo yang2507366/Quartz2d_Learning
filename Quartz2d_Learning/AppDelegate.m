@@ -25,6 +25,7 @@
 #import "PureRoundImageCreator.h"
 #import "PageFilpView.h"
 #import "BookShelfView.h"
+#import "QRFindReplaceView.h"
 
 @interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate, TabSwitchViewDelegate>
 
@@ -196,6 +197,9 @@
 //    [containerView addSubview:button];
 //    DrawImgTest *test = [[DrawImgTest alloc] initWithFrame:CGRectMake(20, 40, 200, 200)];
 //    [self.window addSubview:test];
+    
+    QRFindReplaceView *findView = [[[QRFindReplaceView alloc] initWithFrame:CGRectMake(0, 200, 320, 44)] autorelease];
+    [self.window addSubview:findView];
     
     return YES;
 }
