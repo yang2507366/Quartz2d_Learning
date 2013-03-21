@@ -22,6 +22,9 @@
 		3EC2CBAB15E356F700545BC9 /* ChatEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBAA15E356F700545BC9 /* ChatEmotion.m */; };
 		3EC2CBAE15E3574400545BC9 /* ChatEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */; };
 		3EC2CBF715E38E6A00545BC9 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */; };
+		3ECB170C16FAE93200B6713B /* Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB170B16FAE93200B6713B /* Sort.m */; };
+		3ECB170F16FAFCE800B6713B /* NSOperationQueueLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB170E16FAFCE800B6713B /* NSOperationQueueLearn.m */; };
+		3ECB171316FAFD1100B6713B /* MyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB171216FAFD1100B6713B /* MyOperation.m */; };
 		3EF1746C15F04ACB00B85BC5 /* TabSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */; };
 		3EFFAF6215E5EC7B0061EBE8 /* MsgLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFAF6115E5EC7B0061EBE8 /* MsgLabel.m */; };
 		67786E2015E34AFF00662187 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1B15E34AFF00662187 /* iCarousel.m */; };
@@ -247,6 +250,12 @@
 		3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionManager.m; sourceTree = "<group>"; };
 		3EC2CBF515E38E6A00545BC9 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
 		3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
+		3ECB170A16FAE93200B6713B /* Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
+		3ECB170B16FAE93200B6713B /* Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sort.m; sourceTree = "<group>"; };
+		3ECB170D16FAFCE800B6713B /* NSOperationQueueLearn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueLearn.h; sourceTree = "<group>"; };
+		3ECB170E16FAFCE800B6713B /* NSOperationQueueLearn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueueLearn.m; sourceTree = "<group>"; };
+		3ECB171116FAFD1100B6713B /* MyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOperation.h; sourceTree = "<group>"; };
+		3ECB171216FAFD1100B6713B /* MyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOperation.m; sourceTree = "<group>"; };
 		3EF1746A15F04ACB00B85BC5 /* TabSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabSwitchView.h; sourceTree = "<group>"; };
 		3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabSwitchView.m; sourceTree = "<group>"; };
 		3EFFAF6015E5EC7B0061EBE8 /* MsgLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgLabel.h; sourceTree = "<group>"; };
@@ -673,6 +682,17 @@
 			name = image;
 			sourceTree = "<group>";
 		};
+		3ECB171016FAFCEE00B6713B /* NSOperationQueueLearn */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB170D16FAFCE800B6713B /* NSOperationQueueLearn.h */,
+				3ECB170E16FAFCE800B6713B /* NSOperationQueueLearn.m */,
+				3ECB171116FAFD1100B6713B /* MyOperation.h */,
+				3ECB171216FAFD1100B6713B /* MyOperation.m */,
+			);
+			name = NSOperationQueueLearn;
+			sourceTree = "<group>";
+		};
 		67786E1815E34ADF00662187 /* chatEmotion */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +747,7 @@
 		CF6DA044158EDC7F00A04328 /* Quartz2d_Learning */ = {
 			isa = PBXGroup;
 			children = (
+				3ECB171016FAFCEE00B6713B /* NSOperationQueueLearn */,
 				67786E1815E34ADF00662187 /* chatEmotion */,
 				CF6DA055158EDC8D00A04328 /* primitives */,
 				CF6DA04D158EDC7F00A04328 /* AppDelegate.h */,
@@ -746,6 +767,8 @@
 				3E11E7AC16D31E6C00CDD9E0 /* GridViewWrapper.m */,
 				3EA104E716DC66BC007F418F /* QRFindReplaceView.h */,
 				3EA104E816DC66BC007F418F /* QRFindReplaceView.m */,
+				3ECB170A16FAE93200B6713B /* Sort.h */,
+				3ECB170B16FAE93200B6713B /* Sort.m */,
 			);
 			path = Quartz2d_Learning;
 			sourceTree = "<group>";
@@ -1053,6 +1076,9 @@
 				3E11E7A916D316D200CDD9E0 /* BookShelfView.m in Sources */,
 				3E11E7AD16D31E6C00CDD9E0 /* GridViewWrapper.m in Sources */,
 				3EA104E916DC66BC007F418F /* QRFindReplaceView.m in Sources */,
+				3ECB170C16FAE93200B6713B /* Sort.m in Sources */,
+				3ECB170F16FAFCE800B6713B /* NSOperationQueueLearn.m in Sources */,
+				3ECB171316FAFD1100B6713B /* MyOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

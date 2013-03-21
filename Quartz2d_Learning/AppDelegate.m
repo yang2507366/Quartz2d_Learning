@@ -26,6 +26,8 @@
 #import "PageFilpView.h"
 #import "BookShelfView.h"
 #import "QRFindReplaceView.h"
+#import "Sort.h"
+#import "NSOperationQueueLearn.h"
 
 @interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate, TabSwitchViewDelegate>
 
@@ -75,6 +77,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    NSOperationQueueLearn *tmpLearn = [NSOperationQueueLearn new];
+    [tmpLearn run];
     
 //    NSMutableArray *titleList = [NSMutableArray array];
 //
@@ -200,6 +205,8 @@
     
     QRFindReplaceView *findView = [[[QRFindReplaceView alloc] initWithFrame:CGRectMake(0, 200, 320, 44)] autorelease];
     [self.window addSubview:findView];
+    
+    [[Sort new] autorelease];
     
     return YES;
 }
