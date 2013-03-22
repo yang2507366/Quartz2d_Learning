@@ -28,6 +28,7 @@
 #import "QRFindReplaceView.h"
 #import "Sort.h"
 #import "NSOperationQueueLearn.h"
+#import "RoundBorderImage.h"
 
 @interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate, TabSwitchViewDelegate>
 
@@ -78,135 +79,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    NSOperationQueueLearn *tmpLearn = [NSOperationQueueLearn new];
-    [tmpLearn run];
-    
-//    NSMutableArray *titleList = [NSMutableArray array];
-//
-//    va_list args;
-//    va_start(args, titles);
-//    id arg;
-//    while((arg = va_arg(args, NSString *))){
-//        [titleList addObject:arg];
-//    }
-//    va_end(args);
-
-    
-    SimpleRect *simpleRect = [[[SimpleRect alloc] init] autorelease];
-    simpleRect.frame = CGRectMake(20, 40, 200, 300);
-//    [self.window addSubview:simpleRect];
-    
-    Transform_01 *t = [[[Transform_01 alloc] init] autorelease];
-    t.frame = CGRectMake(0, 0, self.window.frame.size.width, self.window.frame.size.height);
-//    [self.window addSubview:t];
-    
-    PaintWithAlphaAndRotateTransform *p = [[[PaintWithAlphaAndRotateTransform alloc] init] autorelease];
-    p.frame = self.window.bounds;
-//    [self.window addSubview:p];
-    
-    DashLineRect *d = [[[DashLineRect alloc] init] autorelease];
-    d.frame = self.window.bounds;
-//    [self.window addSubview:d];
-    ClippingDrawing *c = [[[ClippingDrawing alloc] init] autorelease];
-    c.frame = self.window.bounds;
-//    [self.window addSubview:c];
-    
-    UIImageView *imgView = [[[UIImageView alloc] init] autorelease];
-    [self.window addSubview:imgView];
-    imgView.frame = CGRectMake(20, 40, 120, 50);
-    imgView.backgroundColor = [UIColor blackColor];
-    imgView.image = [PureRoundImageCreator createPureColorRoundImageWithColor:[UIColor redColor] size:CGSizeMake(40, 50) roundSize:10];
-    
-    PageFilpView *filpView = [[[PageFilpView alloc] initWithFrame:self.window.bounds] autorelease];
-    [self.window addSubview:filpView];
-    
-    BookShelfView *bookView = [[[BookShelfView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)] autorelease];
-    [self.window addSubview:bookView];
-    
-//    int hexColor = 0xb3b373;
-//    int red = (hexColor) >> 16;
-//    int green = (hexColor & 0xFF00) >> 8;
-//    int blue = (hexColor & 0xFF);
-//    
-//    NSLog(@"%f, %f, %f", ((float)red) / 255.0f, ((float)green) / 255.0f, ((float)blue) / 255.0f);
-    
-//    ScreenTestView *v = [[[ScreenTestView alloc] init] autorelease];
-//    [self.window addSubview:v];
-//    NSArray *symbolList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"symbol" ofType:@"plist"]];
-//    NSArray *imageList = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image" ofType:@"plist"]];
-//    NSMutableString *str = [NSMutableString string];
-//    [str appendFormat:@"\n<array>\n"];
-//    for(NSInteger i = 42; i < symbolList.count; ++i){
-//        [str appendFormat:@"<dict>\n<key>%@</key>\n<string>%@</string>\n</dict>\n", [symbolList objectAtIndex:i], [imageList objectAtIndex:i]];
-//    }
-//    [str appendFormat:@"</array>"];
-//    NSLog(@"%@", str);
-//    NSArray *emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
-//    for(NSInteger i = 0; i < emotionCategoryList.count; ++i){
-//        ChatEmotionSelectView *csv = [[[ChatEmotionSelectView alloc] initWithFrame:CGRectMake(0, i * 120 + 40, 320, 120)] autorelease];
-//        csv.delegate = self;
-//        csv.title = [emotionCategoryList objectAtIndex:i];
-//        NSArray *chatEmtionList = [ChatEmotionManager chatEmotionListForCategoryName:[emotionCategoryList objectAtIndex:i]];
-//        NSLog(@"%@", chatEmtionList);
-//        NSMutableArray *imageList = [NSMutableArray array];
-//        for(NSInteger j = 0; j < chatEmtionList.count; ++j){
-//            ChatEmotion *ce = [chatEmtionList objectAtIndex:j];
-//            [imageList addObject:ce.imageName];
-//        }
-//        csv.emotionList = imageList;
-//        [self.window addSubview:csv];
-//        [self.window addSubview:csv];
-//    }
-//    
-//    PageIndicator *pi = [[PageIndicator alloc] initWithNumberOfPages:5];
-//    pi.frame = CGRectMake(10, 300, 200, 20);
-//    [pi setCurrentPageIndex:2];
-//    [pi setIndicatorSize:10];
-//    [self.window addSubview:pi];
-//    pi.normalBackgroundColor = [UIColor blackColor];
-//    pi.highlightBackgroundColor = [UIColor redColor];
-//    EmotionView *emoView = [[EmotionView alloc] initWithFrame:CGRectMake(0, 20, 320, 210)];
-//    emoView.emotionDictionary = [ChatEmotionManager chatEmotionDictionary];
-//    emoView.emotionCategoryList = [ChatEmotionManager chatEmotionCategoryList];
-//    emoView.delegate = self;
-//    emoView.backgroundColor = [UIColor darkGrayColor];
-//    [self.window addSubview:emoView];
-//    NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
-//    NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，涨价的幼儿园是按照法律规定并在向相关部门报备后调整，涨价符合法律规定"];
-//    NSLog(@"%@", msg);
-//    MsgLabel *label = [[[MsgLabel alloc] init] autorelease];
-//    label.frame = CGRectMake(20, 40, 160, 0);
-//    label.msg = msg;
-//    label.backgroundColor = [UIColor clearColor];
-//    label.textColor = [UIColor darkGrayColor];
-//    label.layer.shadowOpacity = 1.0f;
-//    label.layer.shadowRadius = 1.0f;
-//    [label fitToRealHeight];
-//    [self.window addSubview:label];
-    TabSwitchView *switchView = [[TabSwitchView alloc] initWithFrame:CGRectMake(20, 40, 280, 200)];
-    switchView.delegate = self;
-    [self.window addSubview:switchView];
-    switchView.titleList = [NSArray arrayWithObjects:@"周一", @"周2", @"周3", @"周四", @"周无",
-                            nil];
-    UIView *containerView = [switchView containerViewForTitle:@"周一"];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 20)];
-    label.text = @"label";
-    [containerView addSubview:label];
-    [switchView removeFromSuperview];
-    NSLog(@"%d", switchView.retainCount);
-    [switchView release];
-//    
-//    containerView = [switchView containerViewAtIndex:2];
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    button.frame = CGRectMake(20, 20, 80, 30);
-//    [containerView addSubview:button];
-//    DrawImgTest *test = [[DrawImgTest alloc] initWithFrame:CGRectMake(20, 40, 200, 200)];
-//    [self.window addSubview:test];
-    
-    QRFindReplaceView *findView = [[[QRFindReplaceView alloc] initWithFrame:CGRectMake(0, 200, 320, 44)] autorelease];
-    [self.window addSubview:findView];
-    
-    [[Sort new] autorelease];
+    UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 100, 100)] autorelease];
+    imageView.contentMode = UIViewContentModeCenter;
+    [imageView setImage:[RoundBorderImage roundBorderImageWithSize:CGSizeMake(40, 20) cornerSize:10 strokeColor:[UIColor redColor] stokeSize:2]];
+    [self.window addSubview:imageView];
     
     return YES;
 }
