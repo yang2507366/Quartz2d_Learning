@@ -81,9 +81,27 @@
     
     UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 100, 100)] autorelease];
     imageView.contentMode = UIViewContentModeCenter;
+<<<<<<< HEAD
 //    [imageView setImage:[RoundBorderImage roundBorderImageWithSize:CGSizeMake(40, 20) cornerSize:10 strokeColor:[UIColor redColor] stokeSize:2]];
     [imageView setImage:[RoundBorderImage shadowImageWithSize:CGSizeMake(40, 40) beginColor:[UIColor whiteColor] endColor:[UIColor redColor]]];
     [self.window addSubview:imageView];
+=======
+    [imageView setImage:[RoundBorderImage roundBorderImageWithSize:CGSizeMake(40, 20) cornerSize:10 strokeColor:[UIColor redColor] stokeSize:2]];
+//    [self.window addSubview:imageView];
+    
+    QRFindReplaceView *view = [[[QRFindReplaceView alloc] initWithFrame:CGRectMake(0, 20, 300, 300)] autorelease];
+    view.backgroundColor = [UIColor redColor];
+    [self.window addSubview:view];
+    [UIView animateWithDuration:2.0f animations:^{
+        CATransform3D transform = {
+            1.0f,0.0f,0.0f,0.0f,
+            0.0f,1.0f,0.0f,0.0f,
+            0.0f,0.0f,1.0f,0.0f,
+            0.0f,0.0f,0.0f,1.0f
+        };
+        view.layer.transform = transform;
+    }];
+>>>>>>> c
     
     return YES;
 }

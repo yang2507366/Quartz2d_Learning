@@ -14,6 +14,7 @@
 		3E424A1615F49A1F00BDCAF8 /* DrawImgTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E424A1515F49A1F00BDCAF8 /* DrawImgTest.m */; };
 		3E424A1A15F49F1900BDCAF8 /* topbar-pop-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E424A1815F49F1900BDCAF8 /* topbar-pop-bg.png */; };
 		3E424A1B15F49F1900BDCAF8 /* topbar-pop-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E424A1915F49F1900BDCAF8 /* topbar-pop-bg@2x.png */; };
+		3E7E1FB217046719006B2D9E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7E1FB117046719006B2D9E /* Default-568h@2x.png */; };
 		3E96354515E5C86A00D1BAA7 /* TimeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E96354415E5C86A00D1BAA7 /* TimeTracker.m */; };
 		3EA104E916DC66BC007F418F /* QRFindReplaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA104E816DC66BC007F418F /* QRFindReplaceView.m */; };
 		3EAB8CF8165F6EB4004533A6 /* PureRoundImageCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB8CF7165F6EB4004533A6 /* PureRoundImageCreator.m */; };
@@ -238,6 +239,7 @@
 		3E424A1515F49A1F00BDCAF8 /* DrawImgTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawImgTest.m; sourceTree = "<group>"; };
 		3E424A1815F49F1900BDCAF8 /* topbar-pop-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar-pop-bg.png"; sourceTree = "<group>"; };
 		3E424A1915F49F1900BDCAF8 /* topbar-pop-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbar-pop-bg@2x.png"; sourceTree = "<group>"; };
+		3E7E1FB117046719006B2D9E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E96354315E5C86A00D1BAA7 /* TimeTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTracker.h; sourceTree = "<group>"; };
 		3E96354415E5C86A00D1BAA7 /* TimeTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeTracker.m; sourceTree = "<group>"; };
 		3EA104E716DC66BC007F418F /* QRFindReplaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRFindReplaceView.h; sourceTree = "<group>"; };
@@ -722,6 +724,7 @@
 		CF6DA02F158EDC7F00A04328 = {
 			isa = PBXGroup;
 			children = (
+				3E7E1FB117046719006B2D9E /* Default-568h@2x.png */,
 				67786E2315E34B3C00662187 /* QuartzCore.framework */,
 				CF6DA044158EDC7F00A04328 /* Quartz2d_Learning */,
 				CF6DA03D158EDC7F00A04328 /* Frameworks */,
@@ -1047,6 +1050,7 @@
 				678D028415E8E03D00D92D7E /* worry@2x.png in Resources */,
 				3E424A1A15F49F1900BDCAF8 /* topbar-pop-bg.png in Resources */,
 				3E424A1B15F49F1900BDCAF8 /* topbar-pop-bg@2x.png in Resources */,
+				3E7E1FB217046719006B2D9E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
