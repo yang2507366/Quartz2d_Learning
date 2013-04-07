@@ -51,8 +51,8 @@ static void AddRoundedRectToPath(CGContextRef context, CGRect rect,
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, [UIScreen mainScreen].scale * stokeSize);
     CGContextSetStrokeColorWithColor(context, strokeColor.CGColor);
-    CGContextSetShouldAntialias(context, YES);
-    CGContextSetAllowsAntialiasing(context, YES);
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineJoin(context, kCGLineJoinBevel);
     CGContextBeginPath(context);
     AddRoundedRectToPath(context, CGRectMake(0, 0, size.width, size.height * 2), paintRoundSize, paintRoundSize);
     CGContextClosePath(context);
@@ -61,6 +61,28 @@ static void AddRoundedRectToPath(CGContextRef context, CGRect rect,
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     resultImage = [UIImage imageWithCGImage:resultImage.CGImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
     resultImage = [resultImage stretchableImageWithLeftCapWidth:cornerSize topCapHeight:0];
+    UIGraphicsEndImageContext();
+    return resultImage;
+}
+
++ (UIImage *)shadowImageWithSize:(CGSize)size beginColor:(UIColor *)beginColor endColor:(UIColor *)endColor
+{
+    size = CGSizeMake([UIScreen mainScreen].scale * size.width, [UIScreen mainScreen].scale * size.height);
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextAddRect(context, CGRectMake(0, 0, size.width, size.height));
+    CGFloat locs[2] = {0.0f, 1.0f};
+    CGFloat colors[8] = {
+        0.0f,0.0f,0.0f,1.0f,
+        1.0f,1.0f,1.0f,1.0f
+    };
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGGradientRef grad = CGGradientCreateWithColorComponents (colorSpace, colors, locs, 2);
+    CGContextDrawLinearGradient(context, grad, CGPointMake(0,0), CGPointMake(size.width,0), kCGGradientDrawsBeforeStartLocation);
+    CGColorSpaceRelease(colorSpace);
+    CGGradientRelease(grad);
+    
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return resultImage;
 }

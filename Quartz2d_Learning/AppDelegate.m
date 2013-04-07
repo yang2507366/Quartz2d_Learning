@@ -81,7 +81,8 @@
     
     UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 100, 100)] autorelease];
     imageView.contentMode = UIViewContentModeCenter;
-    [imageView setImage:[RoundBorderImage roundBorderImageWithSize:CGSizeMake(40, 20) cornerSize:10 strokeColor:[UIColor redColor] stokeSize:2]];
+//    [imageView setImage:[RoundBorderImage roundBorderImageWithSize:CGSizeMake(40, 20) cornerSize:10 strokeColor:[UIColor redColor] stokeSize:2]];
+    [imageView setImage:[RoundBorderImage shadowImageWithSize:CGSizeMake(40, 40) beginColor:[UIColor whiteColor] endColor:[UIColor redColor]]];
     [self.window addSubview:imageView];
     
     return YES;

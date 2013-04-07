@@ -11,5 +11,6 @@
 @interface RoundBorderImage : NSObject
 
 + (UIImage *)roundBorderImageWithSize:(CGSize)size cornerSize:(CGFloat)cornerSize strokeColor:(UIColor *)strokeColor stokeSize:(CGFloat)stokeSize;
++ (UIImage *)shadowImageWithSize:(CGSize)size beginColor:(UIColor *)beginColor endColor:(UIColor *)endColor;
 
 @end
