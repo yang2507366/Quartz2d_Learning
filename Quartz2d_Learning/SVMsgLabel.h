@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MsgLabel : UIView
+@interface SVMsgLabel : UIView
 
 @property(nonatomic, copy)NSString *msg;
 @property(nonatomic, retain)UIFont *font;

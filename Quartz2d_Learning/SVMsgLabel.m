@@ -6,13 +6,15 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "MsgLabel.h"
+#import "SVMsgLabel.h"
 
-@interface MsgLabel ()
+@interface SVMsgLabel ()
+
+@property(nonatomic, assign)CGFloat realHeight;
 
 @end
 
-@implementation MsgLabel
+@implementation SVMsgLabel
 
 @synthesize msg;
 @synthesize font;
@@ -92,6 +94,7 @@
         [ch drawAtPoint:CGPointMake(tmpX, tmpY) withFont:self.font];
         tmpX += strWidth;
     }
+    self.realHeight = tmpY + tmpLineHeight;;
 }
 
 - (void)setMsg:(NSString *)m
@@ -105,46 +108,9 @@
 
 - (void)fitToRealHeight
 {
+    [self drawRect:self.bounds];
     CGRect rect = self.frame;
-    
-    NSString *identifier = @"{IMG=";
-    CGFloat tmpX = 0.0f;
-    CGFloat tmpY = 0.0f;
-    CGFloat tmpLineHeight = self.font.lineHeight;
-    for(NSInteger i = 0; i < self.msg.length; ++i){
-        NSString *ch = [self.msg substringWithRange:NSMakeRange(i, 1)];
-        if([ch isEqualToString:@"{"]){
-            if(i + identifier.length < self.msg.length){
-                NSString *pp = [self.msg substringWithRange:NSMakeRange(i, identifier.length)];
-                if([pp isEqualToString:identifier]){
-                    NSRange tmpRange = [self.msg rangeOfString:@"}" options:NSCaseInsensitiveSearch range:NSMakeRange(i, self.msg.length - i)];
-                    if(tmpRange.location != NSNotFound){
-                        NSString *imageName = [self.msg substringWithRange:NSMakeRange(i + identifier.length, tmpRange.location - i - identifier.length)];
-                        i = tmpRange.location;
-                        
-                        UIImage *img = [UIImage imageNamed:imageName];
-                        if(tmpX + img.size.width >= rect.size.width){
-                            tmpY += tmpLineHeight;
-                            tmpX = 0;
-                        }
-                        tmpLineHeight = img.size.height > tmpLineHeight ? img.size.height : tmpLineHeight;
-                        tmpX += img.size.width;
-                        continue;
-                    }
-                }
-            }
-        }
-        CGFloat strWidth = [ch sizeWithFont:self.font].width;
-        if(tmpX + strWidth >= rect.size.width){
-            tmpX = 0;
-            tmpY += tmpLineHeight;
-            tmpLineHeight = self.font.lineHeight;
-        }
-        tmpX += strWidth;
-    }
-    
-    rect.size.height = tmpY + tmpLineHeight;
-    
+    rect.size.height = self.realHeight;
     self.frame = rect;
 }
 

@@ -18,7 +18,7 @@
 #import "ChatEmotion.h"
 #import "PageIndicator.h"
 #import "EmotionView.h"
-#import "MsgLabel.h"
+#import "SVMsgLabel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "TabSwitchView.h"
 #import "DrawImgTest.h"
@@ -103,7 +103,7 @@
     NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
     NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，涨价的幼儿园是按照法律规定并在向相关部门报备后调整，涨价符合法律规定"];
     NSLog(@"%@", msg);
-    MsgLabel *label = [[[MsgLabel alloc] init] autorelease];
+    SVMsgLabel *label = [[[SVMsgLabel alloc] init] autorelease];
     label.frame = CGRectMake(20, 40, 160, 0);
     label.msg = msg;
     label.backgroundColor = [UIColor clearColor];
