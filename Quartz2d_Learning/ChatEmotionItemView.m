@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChatEmotionView.h"
+#import "ChatEmotionItemView.h"
 
-@implementation ChatEmotionView
+@implementation ChatEmotionItemView
 
 @synthesize delegate;
 @synthesize numberOfRows;
@@ -50,8 +50,8 @@
     
     for(NSInteger i = 0; i < self.numberOfRows; ++i){
         for(NSInteger j = 0; j < self.numberOfColumns; ++j){
-            if([self.delegate respondsToSelector:@selector(chatEmotionView:viewAtRow:column:)]){
-                UIView *view = [self.delegate chatEmotionView:self viewAtRow:i column:j];
+            if([self.delegate respondsToSelector:@selector(chatEmotionItemView:viewAtRow:column:)]){
+                UIView *view = [self.delegate chatEmotionItemView:self viewAtRow:i column:j];
                 if(view){
                     [self addSubview:view];
                     view.frame = CGRectMake(j * self.itemWidth, i * self.itemHeight, self.itemWidth, self.itemHeight + 2);

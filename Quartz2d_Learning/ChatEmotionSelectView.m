@@ -8,12 +8,12 @@
 
 #import "ChatEmotionSelectView.h"
 #import "iCarousel.h"
-#import "ChatEmotionView.h"
+#import "ChatEmotionItemView.h"
 
 #define COLUMN_CAPACITY 7
 #define ROW_CAPACITY 3
 
-@interface ChatEmotionSelectView () <iCarouselDelegate, iCarouselDataSource, ChatEmotionViewDelegate>
+@interface ChatEmotionSelectView () <iCarouselDelegate, iCarouselDataSource, ChatEmotionItemViewDelegate>
 
 @property(nonatomic, retain)iCarousel *carousel;
 
@@ -130,11 +130,11 @@
 
 - (UIView *)carousel:(iCarousel *)carousel_ viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    ChatEmotionView *chatEmoView = nil;
+    ChatEmotionItemView *chatEmoView = nil;
     if(view){
         chatEmoView = (id)view;
     }else{
-        chatEmoView = [[[ChatEmotionView alloc] initWithFrame:carousel_.bounds] autorelease];
+        chatEmoView = [[[ChatEmotionItemView alloc] initWithFrame:carousel_.bounds] autorelease];
         chatEmoView.delegate = self;
         chatEmoView.numberOfRows = self.numberOfRows;
         chatEmoView.numberOfColumns = self.numberOfColumns;
@@ -153,7 +153,7 @@
 }
 
 #pragma mark - ChatEmotionViewDelegate
-- (UIView *)chatEmotionView:(ChatEmotionView *)chatEmotionView viewAtRow:(NSInteger)row column:(NSInteger)column
+- (UIView *)chatEmotionItemView:(ChatEmotionItemView *)chatEmotionView viewAtRow:(NSInteger)row column:(NSInteger)column
 {
     NSInteger pageIndex = chatEmotionView.tag;
     NSInteger startIndex = pageIndex * self.numberOfRows * self.numberOfColumns;

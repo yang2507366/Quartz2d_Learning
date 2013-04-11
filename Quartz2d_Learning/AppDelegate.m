@@ -81,17 +81,15 @@
     
     UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 100, 100)] autorelease];
     imageView.contentMode = UIViewContentModeCenter;
-<<<<<<< HEAD
 //    [imageView setImage:[RoundBorderImage roundBorderImageWithSize:CGSizeMake(40, 20) cornerSize:10 strokeColor:[UIColor redColor] stokeSize:2]];
     [imageView setImage:[RoundBorderImage shadowImageWithSize:CGSizeMake(40, 40) beginColor:[UIColor whiteColor] endColor:[UIColor redColor]]];
-    [self.window addSubview:imageView];
-=======
+//    [self.window addSubview:imageView];
     [imageView setImage:[RoundBorderImage roundBorderImageWithSize:CGSizeMake(40, 20) cornerSize:10 strokeColor:[UIColor redColor] stokeSize:2]];
 //    [self.window addSubview:imageView];
     
     QRFindReplaceView *view = [[[QRFindReplaceView alloc] initWithFrame:CGRectMake(0, 20, 300, 300)] autorelease];
     view.backgroundColor = [UIColor redColor];
-    [self.window addSubview:view];
+//    [self.window addSubview:view];
     [UIView animateWithDuration:2.0f animations:^{
         CATransform3D transform = {
             1.0f,0.0f,0.0f,0.0f,
@@ -101,7 +99,17 @@
         };
         view.layer.transform = transform;
     }];
->>>>>>> c
+    
+    NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
+    NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，涨价的幼儿园是按照法律规定并在向相关部门报备后调整，涨价符合法律规定"];
+    NSLog(@"%@", msg);
+    MsgLabel *label = [[[MsgLabel alloc] init] autorelease];
+    label.frame = CGRectMake(20, 40, 160, 0);
+    label.msg = msg;
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor darkGrayColor];
+    [label fitToRealHeight];
+    [self.window addSubview:label];
     
     return YES;
 }

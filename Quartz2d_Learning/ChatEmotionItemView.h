@@ -8,18 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class ChatEmotionView;
+@class ChatEmotionItemView;
 
-@protocol ChatEmotionViewDelegate <NSObject>
+@protocol ChatEmotionItemViewDelegate <NSObject>
 
 @optional
-- (UIView *)chatEmotionView:(ChatEmotionView *)chatEmotionView viewAtRow:(NSInteger)row column:(NSInteger)column;
+- (UIView *)chatEmotionItemView:(ChatEmotionItemView *)chatEmotionView viewAtRow:(NSInteger)row column:(NSInteger)column;
 
 @end
 
-@interface ChatEmotionView : UIView
+@interface ChatEmotionItemView : UIView
 
-@property(nonatomic, retain)id<ChatEmotionViewDelegate> delegate;
+@property(nonatomic, retain)id<ChatEmotionItemViewDelegate> delegate;
 @property(nonatomic, assign)NSInteger numberOfRows;
 @property(nonatomic, assign)NSInteger numberOfColumns;
 
