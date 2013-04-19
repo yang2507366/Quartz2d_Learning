@@ -111,6 +111,15 @@
     [label fitToRealHeight];
     [self.window addSubview:label];
     
+    UIView *testView = [[[UIView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)] autorelease];
+    [testView setBackgroundColor:[UIColor redColor]];
+    [self.window addSubview:testView];
+    [UIView animateWithDuration:2.0f animations:^{
+        [testView setBackgroundColor:[UIColor blueColor]];
+    } completion:^(BOOL finished) {
+        [testView removeFromSuperview];
+    }];
+    
     return YES;
 }
 
