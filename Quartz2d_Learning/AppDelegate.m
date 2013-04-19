@@ -104,11 +104,15 @@
     UIScrollView *scrollView = [[[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)] autorelease];
     scrollView.contentSize = CGSizeMake(320, 2500);
     [self.window addSubview:scrollView];
-    for(NSInteger i = 0; i < 10; ++i){
+    for(NSInteger i = 0; i < 1; ++i){
         NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，[snowman]abcde 中fg[whale] ijklmn"];
         SVImageLabel *label = [[[SVImageLabel alloc] init] autorelease];
-        [label setImageGetter:^UIImage *(NSString *imageName) {
-            return [UIImage imageNamed:@"topbar-pop-bg"];
+        [label setViewGetter:^UIView *(NSString *imageName) {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            UIImage *image = [UIImage imageNamed:imageName];
+            [button setImage:image forState:UIControlStateNormal];
+            button.frame = CGRectMake(0, 0, image.size.width * 2, image.size.height * 2);
+            return button;
         }];
         label.frame = CGRectMake(5, i * 500 + 5, 160, 0);
         label.text = msg;

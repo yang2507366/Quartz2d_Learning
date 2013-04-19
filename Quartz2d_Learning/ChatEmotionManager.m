@@ -9,6 +9,7 @@
 #import "ChatEmotionManager.h"
 #import "ChatEmotion.h"
 //#import "TimeTracker.h"
+#import "SVImageLabel.h"
 
 @implementation ChatEmotionManager
 
@@ -140,7 +141,7 @@
         }
     }
     for(NSString *symbol in tmpCheckList){
-        msg = [msg stringByReplacingOccurrencesOfString:symbol withString:[NSString stringWithFormat:@"{IMG=%@}", [self imageNameForSymbol:symbol]]];
+        msg = [msg stringByReplacingOccurrencesOfString:symbol withString:[NSString stringWithFormat:@"%@%@%@", SVImageLabelDefaultImageLeftMatchingText, [self imageNameForSymbol:symbol], SVImageLabelDefaultImageRightMatchingText]];
     }
 //    NSLog(@"cost time:%f", [[TimeTracker defaultTracker] timeIntervalForIdentifier:self]);
     return msg;
