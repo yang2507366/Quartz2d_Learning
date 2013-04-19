@@ -35,8 +35,6 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
 {
     self = [self initWithFrame:CGRectZero];
     
-    self.addInSubviews = [NSMutableArray array];
-    
     return self;
 }
 
@@ -50,6 +48,8 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
     self.font = [UIFont systemFontOfSize:14.0f];
     self.backgroundColor = [UIColor clearColor];
     self.textColor = [UIColor blackColor];
+    
+    self.addInSubviews = [NSMutableArray array];
     
     return self;
 }
@@ -68,16 +68,23 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
     for(UIView *view in self.addInSubviews){
         [view removeFromSuperview];
     }
+    [self drawTextWithRect:rect fakeDraw:NO];
+}
+
+- (void)drawTextWithRect:(CGRect)rect fakeDraw:(BOOL)fakeDraw
+{
     NSString *text = self.text;
     if(!self.text){
+        self.realHeight = [self.font lineHeight];
         return;
     }
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
-    CGContextFillRect(context, rect);
-    CGContextSetFillColorWithColor(context, self.textColor.CGColor);
+    if(!fakeDraw){
+        CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
+        CGContextFillRect(context, rect);
+        CGContextSetFillColorWithColor(context, self.textColor.CGColor);
+    }
     
     NSString *imageLeftMatching = self.imageLeftMatchingText;
     NSString *firstCh = [imageLeftMatching substringToIndex:1];
@@ -94,11 +101,12 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
                     NSRange tmpRange = [text rangeOfString:imageRightMatching options:NSCaseInsensitiveSearch range:NSMakeRange(i, text.length - i)];
                     if(tmpRange.location != NSNotFound){
                         NSString *imageName = [text substringWithRange:NSMakeRange(i + imageLeftMatching.length, tmpRange.location - i - imageLeftMatching.length)];
-                        i = tmpRange.location;
                         
                         UIView *view = [self viewForImageName:imageName];
                         if(view){
-                            [self.addInSubviews addObject:view];
+                            if(!fakeDraw){
+                                [self.addInSubviews addObject:view];
+                            }
                             CGRect tmpRect = view.frame;
                             if(tmpX + tmpRect.size.width >= rect.size.width){
                                 tmpY += tmpLineHeight;
@@ -107,10 +115,15 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
                             tmpRect.origin.x = tmpX;
                             tmpRect.origin.y = tmpY;
                             view.frame = tmpRect;
-                            [self addSubview:view];
+                            if(!fakeDraw){
+                                [self addSubview:view];
+                            }
                             
                             tmpX += tmpRect.size.width;
                             tmpLineHeight = tmpRect.size.height > tmpLineHeight ? tmpRect.size.height : tmpLineHeight;
+                            
+                            i = tmpRange.location;
+                            continue;
                         }else{
                             UIImage *img = nil;
                             if(self.imageGetter){
@@ -118,15 +131,21 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
                             }else{
                                 img = [UIImage imageNamed:imageName];
                             }
-                            if(tmpX + img.size.width >= rect.size.width){
-                                tmpY += tmpLineHeight;
-                                tmpX = 0;
+                            if(img){
+                                if(tmpX + img.size.width >= rect.size.width){
+                                    tmpY += tmpLineHeight;
+                                    tmpX = 0;
+                                }
+                                tmpLineHeight = img.size.height > tmpLineHeight ? img.size.height : tmpLineHeight;
+                                if(!fakeDraw){
+                                    [img drawAtPoint:CGPointMake(tmpX, tmpY)];
+                                }
+                                tmpX += img.size.width;
+                                
+                                i = tmpRange.location;
+                                continue;
                             }
-                            tmpLineHeight = img.size.height > tmpLineHeight ? img.size.height : tmpLineHeight;
-                            [img drawAtPoint:CGPointMake(tmpX, tmpY)];
-                            tmpX += img.size.width;
                         }
-                        continue;
                     }
                 }
             }
@@ -137,10 +156,12 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
             tmpY += tmpLineHeight;
             tmpLineHeight = self.font.lineHeight;
         }
-        [ch drawAtPoint:CGPointMake(tmpX, tmpY) withFont:self.font];
+        if(!fakeDraw){
+            [ch drawAtPoint:CGPointMake(tmpX, tmpY) withFont:self.font];
+        }
         tmpX += strWidth;
     }
-    self.realHeight = tmpY + tmpLineHeight;;
+    self.realHeight = tmpY + tmpLineHeight;
 }
 
 - (void)setText:(NSString *)m
@@ -154,7 +175,7 @@ NSString *SVImageLabelDefaultImageRightMatchingText = @"}";
 
 - (void)resizeToSuitableHeight
 {
-    [self drawRect:self.bounds];
+    [self drawTextWithRect:self.bounds fakeDraw:YES];
     CGRect rect = self.frame;
     rect.size.height = self.realHeight;
     self.frame = rect;
