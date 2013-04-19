@@ -18,7 +18,7 @@
 #import "ChatEmotion.h"
 #import "PageIndicator.h"
 #import "EmotionView.h"
-#import "SVMsgLabel.h"
+#import "SVImageLabel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "TabSwitchView.h"
 #import "DrawImgTest.h"
@@ -100,25 +100,23 @@
         view.layer.transform = transform;
     }];
     
-    NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
-    NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，涨价的幼儿园是按照法律规定并在向相关部门报备后调整，涨价符合法律规定"];
-    NSLog(@"%@", msg);
-    SVMsgLabel *label = [[[SVMsgLabel alloc] init] autorelease];
-    label.frame = CGRectMake(20, 40, 160, 0);
-    label.msg = msg;
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor darkGrayColor];
-    [label fitToRealHeight];
-    [self.window addSubview:label];
-    
-    UIView *testView = [[[UIView alloc] initWithFrame:CGRectMake(10, 10, 100, 100)] autorelease];
-    [testView setBackgroundColor:[UIColor redColor]];
-    [self.window addSubview:testView];
-    [UIView animateWithDuration:2.0f animations:^{
-        [testView setBackgroundColor:[UIColor blueColor]];
-    } completion:^(BOOL finished) {
-        [testView removeFromSuperview];
-    }];
+//    NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
+    UIScrollView *scrollView = [[[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)] autorelease];
+    scrollView.contentSize = CGSizeMake(320, 2500);
+    [self.window addSubview:scrollView];
+    for(NSInteger i = 0; i < 10; ++i){
+        NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，[snowman]abcde 中fg[whale] ijklmn"];
+        SVImageLabel *label = [[[SVImageLabel alloc] init] autorelease];
+        [label setImageGetter:^UIImage *(NSString *imageName) {
+            return [UIImage imageNamed:@"topbar-pop-bg"];
+        }];
+        label.frame = CGRectMake(5, i * 500 + 5, 160, 0);
+        label.text = msg;
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor darkGrayColor];
+        [label resizeToSuitableHeight];
+        [scrollView addSubview:label];
+    }
     
     return YES;
 }

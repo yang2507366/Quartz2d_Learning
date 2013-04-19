@@ -6,25 +6,22 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "SVMsgLabel.h"
+#import "SVImageLabel.h"
 
-@interface SVMsgLabel ()
+@interface SVImageLabel ()
 
 @property(nonatomic, assign)CGFloat realHeight;
 
 @end
 
-@implementation SVMsgLabel
-
-@synthesize msg;
-@synthesize font;
-@synthesize textColor;
+@implementation SVImageLabel
 
 - (void)dealloc
 {
-    self.msg = nil;
+    self.text = nil;
     self.font = nil;
     self.textColor = nil;
+    self.imageGetter = nil;
     [super dealloc];
 }
 
@@ -48,31 +45,39 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    
+    NSString *text = self.text;
+    if(!self.text){
+        return;
+    }
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
     CGContextSetFillColorWithColor(context, self.backgroundColor.CGColor);
     CGContextFillRect(context, rect);
     CGContextSetFillColorWithColor(context, self.textColor.CGColor);
-    
-    if(!self.msg){
-        return;
-    }
     
     NSString *identifier = @"{IMG=";
     CGFloat tmpX = 0.0f;
     CGFloat tmpY = 0.0f;
     CGFloat tmpLineHeight = self.font.lineHeight;
-    for(NSInteger i = 0; i < self.msg.length; ++i){
-        NSString *ch = [self.msg substringWithRange:NSMakeRange(i, 1)];
+    for(NSInteger i = 0; i < text.length; ++i){
+        NSString *ch = [text substringWithRange:NSMakeRange(i, 1)];
         if([ch isEqualToString:@"{"]){
-            if(i + identifier.length < self.msg.length){
-                NSString *pp = [self.msg substringWithRange:NSMakeRange(i, identifier.length)];
+            if(i + identifier.length < text.length){
+                NSString *pp = [text substringWithRange:NSMakeRange(i, identifier.length)];
                 if([pp isEqualToString:identifier]){
-                    NSRange tmpRange = [self.msg rangeOfString:@"}" options:NSCaseInsensitiveSearch range:NSMakeRange(i, self.msg.length - i)];
+                    NSRange tmpRange = [text rangeOfString:@"}" options:NSCaseInsensitiveSearch range:NSMakeRange(i, text.length - i)];
                     if(tmpRange.location != NSNotFound){
-                        NSString *imageName = [self.msg substringWithRange:NSMakeRange(i + identifier.length, tmpRange.location - i - identifier.length)];
+                        NSString *imageName = [text substringWithRange:NSMakeRange(i + identifier.length, tmpRange.location - i - identifier.length)];
                         i = tmpRange.location;
                         
-                        UIImage *img = [UIImage imageNamed:imageName];
+                        UIImage *img = nil;
+                        if(self.imageGetter){
+                            img = self.imageGetter(imageName);
+                        }else{
+                            img = [UIImage imageNamed:imageName];
+                        }
                         if(tmpX + img.size.width >= rect.size.width){
                             tmpY += tmpLineHeight;
                             tmpX = 0;
@@ -97,16 +102,16 @@
     self.realHeight = tmpY + tmpLineHeight;;
 }
 
-- (void)setMsg:(NSString *)m
+- (void)setText:(NSString *)m
 {
-    if(msg != m){
-        [msg release];
-        msg = [m copy];
+    if(_text != m){
+        [_text release];
+        _text = [m copy];
     }
     [self setNeedsDisplay];
 }
 
-- (void)fitToRealHeight
+- (void)resizeToSuitableHeight
 {
     [self drawRect:self.bounds];
     CGRect rect = self.frame;

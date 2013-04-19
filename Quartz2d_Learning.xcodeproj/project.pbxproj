@@ -28,7 +28,7 @@
 		3ECB170F16FAFCE800B6713B /* NSOperationQueueLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB170E16FAFCE800B6713B /* NSOperationQueueLearn.m */; };
 		3ECB171316FAFD1100B6713B /* MyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB171216FAFD1100B6713B /* MyOperation.m */; };
 		3EF1746C15F04ACB00B85BC5 /* TabSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */; };
-		3EFFAF6215E5EC7B0061EBE8 /* SVMsgLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFAF6115E5EC7B0061EBE8 /* SVMsgLabel.m */; };
+		3EFFAF6215E5EC7B0061EBE8 /* SVImageLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFAF6115E5EC7B0061EBE8 /* SVImageLabel.m */; };
 		67786E2015E34AFF00662187 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1B15E34AFF00662187 /* iCarousel.m */; };
 		67786E2115E34AFF00662187 /* ChatEmotionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1D15E34AFF00662187 /* ChatEmotionItemView.m */; };
 		67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */; };
@@ -263,8 +263,8 @@
 		3ECB171216FAFD1100B6713B /* MyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOperation.m; sourceTree = "<group>"; };
 		3EF1746A15F04ACB00B85BC5 /* TabSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabSwitchView.h; sourceTree = "<group>"; };
 		3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabSwitchView.m; sourceTree = "<group>"; };
-		3EFFAF6015E5EC7B0061EBE8 /* SVMsgLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVMsgLabel.h; sourceTree = "<group>"; };
-		3EFFAF6115E5EC7B0061EBE8 /* SVMsgLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVMsgLabel.m; sourceTree = "<group>"; };
+		3EFFAF6015E5EC7B0061EBE8 /* SVImageLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVImageLabel.h; sourceTree = "<group>"; };
+		3EFFAF6115E5EC7B0061EBE8 /* SVImageLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVImageLabel.m; sourceTree = "<group>"; };
 		67786E1A15E34AFF00662187 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		67786E1B15E34AFF00662187 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		67786E1C15E34AFF00662187 /* ChatEmotionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionItemView.h; sourceTree = "<group>"; };
@@ -491,6 +491,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EA1F24F1720F1D400F5CEBA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB171016FAFCEE00B6713B /* NSOperationQueueLearn */,
+				67786E1815E34ADF00662187 /* chatEmotion */,
+				CF6DA055158EDC8D00A04328 /* primitives */,
+				3E96354315E5C86A00D1BAA7 /* TimeTracker.h */,
+				3E96354415E5C86A00D1BAA7 /* TimeTracker.m */,
+				3EF1746A15F04ACB00B85BC5 /* TabSwitchView.h */,
+				3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */,
+				3E424A1415F49A1F00BDCAF8 /* DrawImgTest.h */,
+				3E424A1515F49A1F00BDCAF8 /* DrawImgTest.m */,
+				3E11E7A416D3160700CDD9E0 /* PageFilpView.h */,
+				3E11E7A516D3160700CDD9E0 /* PageFilpView.m */,
+				3E11E7A716D316D200CDD9E0 /* BookShelfView.h */,
+				3E11E7A816D316D200CDD9E0 /* BookShelfView.m */,
+				3E11E7AB16D31E6C00CDD9E0 /* GridViewWrapper.h */,
+				3E11E7AC16D31E6C00CDD9E0 /* GridViewWrapper.m */,
+				3EA104E716DC66BC007F418F /* QRFindReplaceView.h */,
+				3EA104E816DC66BC007F418F /* QRFindReplaceView.m */,
+				3ECB170A16FAE93200B6713B /* Sort.h */,
+				3ECB170B16FAE93200B6713B /* Sort.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		3EC2CAEC15E34C0400545BC9 /* chatEmotion */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,8 +741,8 @@
 				3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */,
 				67786EFA15E3B28E00662187 /* EmotionView.h */,
 				67786EFB15E3B28E00662187 /* EmotionView.m */,
-				3EFFAF6015E5EC7B0061EBE8 /* SVMsgLabel.h */,
-				3EFFAF6115E5EC7B0061EBE8 /* SVMsgLabel.m */,
+				3EFFAF6015E5EC7B0061EBE8 /* SVImageLabel.h */,
+				3EFFAF6115E5EC7B0061EBE8 /* SVImageLabel.m */,
 			);
 			name = chatEmotion;
 			sourceTree = "<group>";
@@ -727,6 +753,7 @@
 				3E7E1FB117046719006B2D9E /* Default-568h@2x.png */,
 				67786E2315E34B3C00662187 /* QuartzCore.framework */,
 				CF6DA044158EDC7F00A04328 /* Quartz2d_Learning */,
+				CF6DA045158EDC7F00A04328 /* Supporting Files */,
 				CF6DA03D158EDC7F00A04328 /* Frameworks */,
 				CF6DA03B158EDC7F00A04328 /* Products */,
 			);
@@ -753,28 +780,9 @@
 		CF6DA044158EDC7F00A04328 /* Quartz2d_Learning */ = {
 			isa = PBXGroup;
 			children = (
-				3ECB171016FAFCEE00B6713B /* NSOperationQueueLearn */,
-				67786E1815E34ADF00662187 /* chatEmotion */,
-				CF6DA055158EDC8D00A04328 /* primitives */,
+				3EA1F24F1720F1D400F5CEBA /* Classes */,
 				CF6DA04D158EDC7F00A04328 /* AppDelegate.h */,
 				CF6DA04E158EDC7F00A04328 /* AppDelegate.m */,
-				3E96354315E5C86A00D1BAA7 /* TimeTracker.h */,
-				3E96354415E5C86A00D1BAA7 /* TimeTracker.m */,
-				CF6DA045158EDC7F00A04328 /* Supporting Files */,
-				3EF1746A15F04ACB00B85BC5 /* TabSwitchView.h */,
-				3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */,
-				3E424A1415F49A1F00BDCAF8 /* DrawImgTest.h */,
-				3E424A1515F49A1F00BDCAF8 /* DrawImgTest.m */,
-				3E11E7A416D3160700CDD9E0 /* PageFilpView.h */,
-				3E11E7A516D3160700CDD9E0 /* PageFilpView.m */,
-				3E11E7A716D316D200CDD9E0 /* BookShelfView.h */,
-				3E11E7A816D316D200CDD9E0 /* BookShelfView.m */,
-				3E11E7AB16D31E6C00CDD9E0 /* GridViewWrapper.h */,
-				3E11E7AC16D31E6C00CDD9E0 /* GridViewWrapper.m */,
-				3EA104E716DC66BC007F418F /* QRFindReplaceView.h */,
-				3EA104E816DC66BC007F418F /* QRFindReplaceView.m */,
-				3ECB170A16FAE93200B6713B /* Sort.h */,
-				3ECB170B16FAE93200B6713B /* Sort.m */,
 			);
 			path = Quartz2d_Learning;
 			sourceTree = "<group>";
@@ -791,6 +799,7 @@
 				CF6DA04C158EDC7F00A04328 /* Quartz2d_Learning-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = Quartz2d_Learning;
 			sourceTree = "<group>";
 		};
 		CF6DA055158EDC8D00A04328 /* primitives */ = {
@@ -1077,7 +1086,7 @@
 				3EC2CBF715E38E6A00545BC9 /* PageIndicator.m in Sources */,
 				67786EFC15E3B28E00662187 /* EmotionView.m in Sources */,
 				3E96354515E5C86A00D1BAA7 /* TimeTracker.m in Sources */,
-				3EFFAF6215E5EC7B0061EBE8 /* SVMsgLabel.m in Sources */,
+				3EFFAF6215E5EC7B0061EBE8 /* SVImageLabel.m in Sources */,
 				3EF1746C15F04ACB00B85BC5 /* TabSwitchView.m in Sources */,
 				3E424A1615F49A1F00BDCAF8 /* DrawImgTest.m in Sources */,
 				3EAB8CF8165F6EB4004533A6 /* PureRoundImageCreator.m in Sources */,

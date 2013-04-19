@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SVMsgLabel : UIView
+@interface SVImageLabel : UIView
 
-@property(nonatomic, copy)NSString *msg;
+@property(nonatomic, copy)NSString *text;
 @property(nonatomic, retain)UIFont *font;
 @property(nonatomic, retain)UIColor *textColor;
+@property(nonatomic, copy)UIImage *(^imageGetter)(NSString *image);
 
-- (void)fitToRealHeight;
+- (void)resizeToSuitableHeight;
 
 @end
