@@ -6,28 +6,28 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "EmotionView.h"
-#import "ChatEmotionSelectView.h"
-#import "ChatEmotion.h"
-#import "PageIndicator.h"
+#import "SVEmotionView.h"
+#import "SVChatEmotionSelectView.h"
+#import "SVChatEmotion.h"
+#import "SVPageIndicator.h"
 
-@interface EmotionView () <ChatEmotionSelectViewDelegate>
+@interface SVEmotionView () <SVChatEmotionSelectViewDelegate>
 
 @property(nonatomic, assign)NSInteger currentCategoryIndex;
 @property(nonatomic, retain)NSMutableArray *switchButtonList;
 @property(nonatomic, retain)NSMutableArray *chatEmotionSelectViewList;
-@property(nonatomic, retain)PageIndicator *pageIndicator;
+@property(nonatomic, retain)SVPageIndicator *pageIndicator;
 @property(nonatomic, retain)UIButton *deleteButton;
 
 - (NSArray *)emotionListForSelectViewAtCategory:(NSString *)category;
 
 @end
 
-@implementation EmotionView
+@implementation SVEmotionView
 
 @synthesize delegate;
-@synthesize emotionCategoryList;
-@synthesize emotionDictionary;
+@synthesize categories;
+@synthesize keyCategoryValueEmotions;
 
 @synthesize currentCategoryIndex;
 @synthesize switchButtonList;
@@ -37,8 +37,8 @@
 
 - (void)dealloc
 {
-    self.emotionCategoryList = nil;
-    self.emotionDictionary = nil;
+    self.categories = nil;
+    self.keyCategoryValueEmotions = nil;
     
     self.switchButtonList = nil;
     self.chatEmotionSelectViewList = nil;
@@ -60,7 +60,7 @@
     
     self.currentCategoryIndex = -1;
     
-    self.pageIndicator = [[[PageIndicator alloc] init] autorelease];
+    self.pageIndicator = [[[SVPageIndicator alloc] init] autorelease];
     self.pageIndicator.indicatorSize = 5;
     [self addSubview:self.pageIndicator];
     
@@ -80,9 +80,9 @@
     CGFloat deleteBtnWidth = 56;
     CGFloat bototmBtnHeight = 54;
     CGFloat pageIndicatorHeight = 40;
-    CGFloat switchBtnWidth = (self.frame.size.width - deleteBtnWidth) / emotionCategoryList.count;
-    for(NSInteger i = 0; i < emotionCategoryList.count; ++i){
-        ChatEmotionSelectView *selectView = [self.chatEmotionSelectViewList objectAtIndex:i];
+    CGFloat switchBtnWidth = (self.frame.size.width - deleteBtnWidth) / categories.count;
+    for(NSInteger i = 0; i < categories.count; ++i){
+        SVChatEmotionSelectView *selectView = [self.chatEmotionSelectViewList objectAtIndex:i];
         selectView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - bototmBtnHeight - pageIndicatorHeight);
         
         UIButton *switchBtn = [self.switchButtonList objectAtIndex:i];
@@ -104,13 +104,13 @@
                                          bototmBtnHeight);
 }
 
-- (void)setEmotionCategoryList:(NSArray *)categoryList
+- (void)setCategories:(NSArray *)categoryList
 {
-    if(emotionCategoryList != categoryList){
-        [emotionCategoryList release];
-        emotionCategoryList = nil;
+    if(categories != categoryList){
+        [categories release];
+        categories = nil;
     }
-    emotionCategoryList = [categoryList retain];
+    categories = [categoryList retain];
     
     if(self.switchButtonList){
         for(UIView *view in self.switchButtonList){
@@ -127,8 +127,8 @@
     
     self.switchButtonList = [NSMutableArray array];
     self.chatEmotionSelectViewList = [NSMutableArray array];
-    for(NSInteger i = 0; i < self.emotionCategoryList.count; ++i){
-        NSString *category = [self.emotionCategoryList objectAtIndex:i];
+    for(NSInteger i = 0; i < self.categories.count; ++i){
+        NSString *category = [self.categories objectAtIndex:i];
         
         UIButton *switchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         switchBtn.titleLabel.font = [UIFont systemFontOfSize:16.0f];
@@ -139,7 +139,7 @@
         [self.switchButtonList addObject:switchBtn];
         [self addSubview:switchBtn];
         
-        ChatEmotionSelectView *selectView = [[[ChatEmotionSelectView alloc] init] autorelease];
+        SVChatEmotionSelectView *selectView = [[[SVChatEmotionSelectView alloc] init] autorelease];
         selectView.title = category;
         selectView.delegate = self;
         selectView.emotionList = [self emotionListForSelectViewAtCategory:category];
@@ -152,13 +152,13 @@
     [self setNeedsLayout];
 }
 
-- (void)setEmotionDictionary:(NSDictionary *)dict
+- (void)setKeyCategoryValueEmotions:(NSDictionary *)dict
 {
-    if(emotionDictionary != dict){
-        [emotionDictionary release];
-        emotionDictionary = nil;
+    if(keyCategoryValueEmotions != dict){
+        [keyCategoryValueEmotions release];
+        keyCategoryValueEmotions = nil;
     }
-    emotionDictionary = [dict retain];
+    keyCategoryValueEmotions = [dict retain];
     
     [self setNeedsLayout];
 }
@@ -171,7 +171,7 @@
     currentCategoryIndex = index;
     
     for(NSInteger i = 0; i < self.chatEmotionSelectViewList.count; ++i){
-        ChatEmotionSelectView *view = [self.chatEmotionSelectViewList objectAtIndex:i];
+        SVChatEmotionSelectView *view = [self.chatEmotionSelectViewList objectAtIndex:i];
         BOOL currentShow = self.currentCategoryIndex == i;
         view.hidden = !currentShow;
         if(!view.hidden){
@@ -189,11 +189,11 @@
 #pragma mark - private methods
 - (NSArray *)emotionListForSelectViewAtCategory:(NSString *)category
 {
-    NSArray *chatEmotionList = [self.emotionDictionary objectForKey:category];
+    NSArray *chatEmotionList = [self.keyCategoryValueEmotions objectForKey:category];
     if(chatEmotionList){
         NSMutableArray *emotionList = [NSMutableArray array];
         for(NSInteger i = 0; i < chatEmotionList.count; ++i){
-            ChatEmotion *emo = [chatEmotionList objectAtIndex:i];
+            SVChatEmotion *emo = [chatEmotionList objectAtIndex:i];
             [emotionList addObject:emo.imageName];
         }
         return emotionList;
@@ -215,18 +215,18 @@
 }
 
 #pragma mark - ChatEmotionSelectViewDelegate
-- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index
+- (void)chatEmotionSelectView:(SVChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index
 {
     NSString *category = chatEmoSelectView.title;
-    NSArray *emotionList = [self.emotionDictionary objectForKey:category];
-    ChatEmotion *emo = [emotionList objectAtIndex:index];
+    NSArray *emotionList = [self.keyCategoryValueEmotions objectForKey:category];
+    SVChatEmotion *emo = [emotionList objectAtIndex:index];
 //    NSLog(@"%@, %@", emo.symbol, emo.imageName);
     if([self.delegate respondsToSelector:@selector(emotionView:didSelectEmotion:)]){
         [self.delegate emotionView:self didSelectEmotion:emo];
     }
 }
 
-- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didChangeToPageIndex:(NSInteger)pageIndex
+- (void)chatEmotionSelectView:(SVChatEmotionSelectView *)chatEmoSelectView didChangeToPageIndex:(NSInteger)pageIndex
 {
     self.pageIndicator.currentPageIndex = pageIndex;
 }

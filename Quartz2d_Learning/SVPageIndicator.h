@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PageIndicator : UIView 
+@interface SVPageIndicator : UIView 
 
 @property(nonatomic, assign)NSInteger currentPageIndex;
 @property(nonatomic, assign)NSInteger numberOfPages;

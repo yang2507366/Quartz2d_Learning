@@ -13,11 +13,11 @@
 #import "DashLineRect.h"
 #import "ClippingDrawing.h"
 #import "ScreenTestView.h"
-#import "ChatEmotionSelectView.h"
+#import "SVChatEmotionSelectView.h"
 #import "ChatEmotionManager.h"
-#import "ChatEmotion.h"
-#import "PageIndicator.h"
-#import "EmotionView.h"
+#import "SVChatEmotion.h"
+#import "SVPageIndicator.h"
+#import "SVEmotionView.h"
 #import "SVImageLabel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "TabSwitchView.h"
@@ -30,7 +30,7 @@
 #import "NSOperationQueueLearn.h"
 #import "RoundBorderImage.h"
 
-@interface AppDelegate () <ChatEmotionSelectViewDelegate, EmotionViewDelegate, TabSwitchViewDelegate>
+@interface AppDelegate () <SVChatEmotionSelectViewDelegate, SVEmotionViewDelegate, TabSwitchViewDelegate>
 
 @end
 
@@ -131,16 +131,16 @@
 }
 
 #pragma mark - EmotionViewDelegate
-- (void)emotionView:(EmotionView *)emoView didSelectEmotion:(ChatEmotion *)chatEmo
+- (void)emotionView:(SVEmotionView *)emoView didSelectEmotion:(SVChatEmotion *)chatEmo
 {
     NSLog(@"%@", chatEmo);
 }
 
 #pragma mark - ChatEmotionSelectViewDelegate
-- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index
+- (void)chatEmotionSelectView:(SVChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index
 {
-    ChatEmotion *ce = [[ChatEmotionManager chatEmotionListForCategoryName:chatEmoSelectView.title] objectAtIndex:index];
-    NSLog(@"%@:%@", chatEmoSelectView.title, ce.symbol);
+    SVChatEmotion *ce = [[ChatEmotionManager chatEmotionListForCategoryName:chatEmoSelectView.title] objectAtIndex:index];
+    NSLog(@"%@:%@", chatEmoSelectView.title, ce.code);
     
 }
 

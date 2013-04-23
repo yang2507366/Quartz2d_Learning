@@ -7,7 +7,7 @@
 //
 
 #import "ChatEmotionManager.h"
-#import "ChatEmotion.h"
+#import "SVChatEmotion.h"
 //#import "TimeTracker.h"
 #import "SVImageLabel.h"
 
@@ -49,9 +49,9 @@
             NSMutableArray *chatEmotionList = [NSMutableArray array];
             for(NSInteger j = 0; j < array.count; ++j){
                 NSDictionary *emotionInfo = [array objectAtIndex:j];
-                ChatEmotion *ce = [[[ChatEmotion alloc] init] autorelease];
-                ce.symbol = [[emotionInfo allKeys] lastObject];
-                ce.imageName = [emotionInfo objectForKey:ce.symbol];
+                SVChatEmotion *ce = [[[SVChatEmotion alloc] init] autorelease];
+                ce.code = [[emotionInfo allKeys] lastObject];
+                ce.imageName = [emotionInfo objectForKey:ce.code];
                 [chatEmotionList addObject:ce];
             }
             return chatEmotionList;
@@ -76,8 +76,8 @@
     NSArray *categoryList = [self.class chatEmotionCategoryList];
     for(NSString *category in categoryList){
         NSArray *emotionList = [self.class chatEmotionListForCategoryName:category];
-        for(ChatEmotion *emo in emotionList){
-            [symbolList addObject:emo.symbol];
+        for(SVChatEmotion *emo in emotionList){
+            [symbolList addObject:emo.code];
         }
     }
     return symbolList;
@@ -91,8 +91,8 @@
         NSArray *categoryList = [self.class chatEmotionCategoryList];
         for(NSString *category in categoryList){
             NSArray *emotionList = [self.class chatEmotionListForCategoryName:category];
-            for(ChatEmotion *emo in emotionList){
-                [tmpSymbolImageDict setObject:emo.imageName forKey:emo.symbol];
+            for(SVChatEmotion *emo in emotionList){
+                [tmpSymbolImageDict setObject:emo.imageName forKey:emo.code];
             }
         }
         symbolImageDict = [tmpSymbolImageDict retain];

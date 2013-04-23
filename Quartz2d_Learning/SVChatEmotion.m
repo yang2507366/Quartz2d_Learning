@@ -6,23 +6,23 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChatEmotion.h"
+#import "SVChatEmotion.h"
 
-@implementation ChatEmotion
+@implementation SVChatEmotion
 
-@synthesize symbol;
+@synthesize code;
 @synthesize imageName;
 
 - (void)dealloc
 {
-    self.symbol = nil;
+    self.code = nil;
     self.imageName = nil;
     [super dealloc];
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@, %@", self.symbol, self.imageName];
+    return [NSString stringWithFormat:@"%@, %@", self.code, self.imageName];
 }
 
 @end

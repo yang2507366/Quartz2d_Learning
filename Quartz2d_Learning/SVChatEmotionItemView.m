@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChatEmotionItemView.h"
+#import "SVChatEmotionItemView.h"
 
-@implementation ChatEmotionItemView
+@implementation SVChatEmotionItemView
 
 @synthesize delegate;
 @synthesize numberOfRows;

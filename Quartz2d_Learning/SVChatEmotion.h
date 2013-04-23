@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ChatEmotion : NSObject
+@interface SVChatEmotion : NSObject
 
-@property(nonatomic, copy)NSString *symbol;
+@property(nonatomic, copy)NSString *code;
 @property(nonatomic, copy)NSString *imageName;
 
 @end

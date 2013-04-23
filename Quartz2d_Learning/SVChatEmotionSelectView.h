@@ -8,19 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class ChatEmotionSelectView;
+@class SVChatEmotionSelectView;
 
-@protocol ChatEmotionSelectViewDelegate <NSObject>
+@protocol SVChatEmotionSelectViewDelegate <NSObject>
 
 @optional
-- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index;
-- (void)chatEmotionSelectView:(ChatEmotionSelectView *)chatEmoSelectView didChangeToPageIndex:(NSInteger)pageIndex;
+- (void)chatEmotionSelectView:(SVChatEmotionSelectView *)chatEmoSelectView didSelectEmotionAtIndex:(NSInteger)index;
+- (void)chatEmotionSelectView:(SVChatEmotionSelectView *)chatEmoSelectView didChangeToPageIndex:(NSInteger)pageIndex;
 
 @end
 
-@interface ChatEmotionSelectView : UIView 
+@interface SVChatEmotionSelectView : UIView 
 
-@property(nonatomic, assign)id<ChatEmotionSelectViewDelegate> delegate;
+@property(nonatomic, assign)id<SVChatEmotionSelectViewDelegate> delegate;
 @property(nonatomic, copy)NSString *title;
 @property(nonatomic, assign)BOOL isTextEmotion;
 @property(nonatomic, retain)NSArray *emotionList;

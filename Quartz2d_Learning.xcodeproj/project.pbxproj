@@ -21,19 +21,19 @@
 		3EC2CAF115E34C5200545BC9 /* emotions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EC2CAF015E34C5200545BC9 /* emotions.plist */; };
 		3EC2CAF315E351C300545BC9 /* symbol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EC2CAF215E351C300545BC9 /* symbol.plist */; };
 		3EC2CAF515E3520600545BC9 /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EC2CAF415E3520600545BC9 /* image.plist */; };
-		3EC2CBAB15E356F700545BC9 /* ChatEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBAA15E356F700545BC9 /* ChatEmotion.m */; };
+		3EC2CBAB15E356F700545BC9 /* SVChatEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBAA15E356F700545BC9 /* SVChatEmotion.m */; };
 		3EC2CBAE15E3574400545BC9 /* ChatEmotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */; };
-		3EC2CBF715E38E6A00545BC9 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */; };
+		3EC2CBF715E38E6A00545BC9 /* SVPageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2CBF615E38E6A00545BC9 /* SVPageIndicator.m */; };
 		3ECB170C16FAE93200B6713B /* Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB170B16FAE93200B6713B /* Sort.m */; };
 		3ECB170F16FAFCE800B6713B /* NSOperationQueueLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB170E16FAFCE800B6713B /* NSOperationQueueLearn.m */; };
 		3ECB171316FAFD1100B6713B /* MyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB171216FAFD1100B6713B /* MyOperation.m */; };
 		3EF1746C15F04ACB00B85BC5 /* TabSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1746B15F04ACB00B85BC5 /* TabSwitchView.m */; };
 		3EFFAF6215E5EC7B0061EBE8 /* SVImageLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFAF6115E5EC7B0061EBE8 /* SVImageLabel.m */; };
 		67786E2015E34AFF00662187 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1B15E34AFF00662187 /* iCarousel.m */; };
-		67786E2115E34AFF00662187 /* ChatEmotionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1D15E34AFF00662187 /* ChatEmotionItemView.m */; };
-		67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */; };
+		67786E2115E34AFF00662187 /* SVChatEmotionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1D15E34AFF00662187 /* SVChatEmotionItemView.m */; };
+		67786E2215E34AFF00662187 /* SVChatEmotionSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786E1F15E34AFF00662187 /* SVChatEmotionSelectView.m */; };
 		67786E2415E34B3C00662187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67786E2315E34B3C00662187 /* QuartzCore.framework */; };
-		67786EFC15E3B28E00662187 /* EmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786EFB15E3B28E00662187 /* EmotionView.m */; };
+		67786EFC15E3B28E00662187 /* SVEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67786EFB15E3B28E00662187 /* SVEmotionView.m */; };
 		678D01D315E8E03D00D92D7E /* alien.png in Resources */ = {isa = PBXBuildFile; fileRef = 678D012115E8E03D00D92D7E /* alien.png */; };
 		678D01D415E8E03D00D92D7E /* alien@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 678D012215E8E03D00D92D7E /* alien@2x.png */; };
 		678D01D515E8E03D00D92D7E /* amazing.png in Resources */ = {isa = PBXBuildFile; fileRef = 678D012315E8E03D00D92D7E /* amazing.png */; };
@@ -249,12 +249,12 @@
 		3EC2CAF015E34C5200545BC9 /* emotions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotions.plist; sourceTree = "<group>"; };
 		3EC2CAF215E351C300545BC9 /* symbol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = symbol.plist; sourceTree = "<group>"; };
 		3EC2CAF415E3520600545BC9 /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
-		3EC2CBA915E356F700545BC9 /* ChatEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotion.h; sourceTree = "<group>"; };
-		3EC2CBAA15E356F700545BC9 /* ChatEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotion.m; sourceTree = "<group>"; };
+		3EC2CBA915E356F700545BC9 /* SVChatEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVChatEmotion.h; sourceTree = "<group>"; };
+		3EC2CBAA15E356F700545BC9 /* SVChatEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVChatEmotion.m; sourceTree = "<group>"; };
 		3EC2CBAC15E3574400545BC9 /* ChatEmotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionManager.h; sourceTree = "<group>"; };
 		3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionManager.m; sourceTree = "<group>"; };
-		3EC2CBF515E38E6A00545BC9 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
-		3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
+		3EC2CBF515E38E6A00545BC9 /* SVPageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPageIndicator.h; sourceTree = "<group>"; };
+		3EC2CBF615E38E6A00545BC9 /* SVPageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPageIndicator.m; sourceTree = "<group>"; };
 		3ECB170A16FAE93200B6713B /* Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
 		3ECB170B16FAE93200B6713B /* Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sort.m; sourceTree = "<group>"; };
 		3ECB170D16FAFCE800B6713B /* NSOperationQueueLearn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationQueueLearn.h; sourceTree = "<group>"; };
@@ -267,13 +267,13 @@
 		3EFFAF6115E5EC7B0061EBE8 /* SVImageLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVImageLabel.m; sourceTree = "<group>"; };
 		67786E1A15E34AFF00662187 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		67786E1B15E34AFF00662187 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		67786E1C15E34AFF00662187 /* ChatEmotionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionItemView.h; sourceTree = "<group>"; };
-		67786E1D15E34AFF00662187 /* ChatEmotionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionItemView.m; sourceTree = "<group>"; };
-		67786E1E15E34AFF00662187 /* ChatEmotionSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmotionSelectView.h; sourceTree = "<group>"; };
-		67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmotionSelectView.m; sourceTree = "<group>"; };
+		67786E1C15E34AFF00662187 /* SVChatEmotionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVChatEmotionItemView.h; sourceTree = "<group>"; };
+		67786E1D15E34AFF00662187 /* SVChatEmotionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVChatEmotionItemView.m; sourceTree = "<group>"; };
+		67786E1E15E34AFF00662187 /* SVChatEmotionSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVChatEmotionSelectView.h; sourceTree = "<group>"; };
+		67786E1F15E34AFF00662187 /* SVChatEmotionSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVChatEmotionSelectView.m; sourceTree = "<group>"; };
 		67786E2315E34B3C00662187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		67786EFA15E3B28E00662187 /* EmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionView.h; sourceTree = "<group>"; };
-		67786EFB15E3B28E00662187 /* EmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionView.m; sourceTree = "<group>"; };
+		67786EFA15E3B28E00662187 /* SVEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVEmotionView.h; sourceTree = "<group>"; };
+		67786EFB15E3B28E00662187 /* SVEmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVEmotionView.m; sourceTree = "<group>"; };
 		678D012115E8E03D00D92D7E /* alien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alien.png; sourceTree = "<group>"; };
 		678D012215E8E03D00D92D7E /* alien@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alien@2x.png"; sourceTree = "<group>"; };
 		678D012315E8E03D00D92D7E /* amazing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amazing.png; sourceTree = "<group>"; };
@@ -491,6 +491,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E1692B4172638D900BF425D /* EmotionView */ = {
+			isa = PBXGroup;
+			children = (
+				67786E1C15E34AFF00662187 /* SVChatEmotionItemView.h */,
+				67786E1D15E34AFF00662187 /* SVChatEmotionItemView.m */,
+				67786E1E15E34AFF00662187 /* SVChatEmotionSelectView.h */,
+				67786E1F15E34AFF00662187 /* SVChatEmotionSelectView.m */,
+				3EC2CBF515E38E6A00545BC9 /* SVPageIndicator.h */,
+				3EC2CBF615E38E6A00545BC9 /* SVPageIndicator.m */,
+				67786EFA15E3B28E00662187 /* SVEmotionView.h */,
+				67786EFB15E3B28E00662187 /* SVEmotionView.m */,
+			);
+			name = EmotionView;
+			sourceTree = "<group>";
+		};
 		3EA1F24F1720F1D400F5CEBA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,20 +742,13 @@
 		67786E1815E34ADF00662187 /* chatEmotion */ = {
 			isa = PBXGroup;
 			children = (
+				3E1692B4172638D900BF425D /* EmotionView */,
 				67786E1A15E34AFF00662187 /* iCarousel.h */,
 				67786E1B15E34AFF00662187 /* iCarousel.m */,
-				67786E1C15E34AFF00662187 /* ChatEmotionItemView.h */,
-				67786E1D15E34AFF00662187 /* ChatEmotionItemView.m */,
-				67786E1E15E34AFF00662187 /* ChatEmotionSelectView.h */,
-				67786E1F15E34AFF00662187 /* ChatEmotionSelectView.m */,
-				3EC2CBA915E356F700545BC9 /* ChatEmotion.h */,
-				3EC2CBAA15E356F700545BC9 /* ChatEmotion.m */,
+				3EC2CBA915E356F700545BC9 /* SVChatEmotion.h */,
+				3EC2CBAA15E356F700545BC9 /* SVChatEmotion.m */,
 				3EC2CBAC15E3574400545BC9 /* ChatEmotionManager.h */,
 				3EC2CBAD15E3574400545BC9 /* ChatEmotionManager.m */,
-				3EC2CBF515E38E6A00545BC9 /* PageIndicator.h */,
-				3EC2CBF615E38E6A00545BC9 /* PageIndicator.m */,
-				67786EFA15E3B28E00662187 /* EmotionView.h */,
-				67786EFB15E3B28E00662187 /* EmotionView.m */,
 				3EFFAF6015E5EC7B0061EBE8 /* SVImageLabel.h */,
 				3EFFAF6115E5EC7B0061EBE8 /* SVImageLabel.m */,
 			);
@@ -1079,12 +1087,12 @@
 				CFBEE0C5159076EE0004871C /* ClippingDrawing.m in Sources */,
 				CF890BCC159AB9D200A88D4E /* ScreenTestView.m in Sources */,
 				67786E2015E34AFF00662187 /* iCarousel.m in Sources */,
-				67786E2115E34AFF00662187 /* ChatEmotionItemView.m in Sources */,
-				67786E2215E34AFF00662187 /* ChatEmotionSelectView.m in Sources */,
-				3EC2CBAB15E356F700545BC9 /* ChatEmotion.m in Sources */,
+				67786E2115E34AFF00662187 /* SVChatEmotionItemView.m in Sources */,
+				67786E2215E34AFF00662187 /* SVChatEmotionSelectView.m in Sources */,
+				3EC2CBAB15E356F700545BC9 /* SVChatEmotion.m in Sources */,
 				3EC2CBAE15E3574400545BC9 /* ChatEmotionManager.m in Sources */,
-				3EC2CBF715E38E6A00545BC9 /* PageIndicator.m in Sources */,
-				67786EFC15E3B28E00662187 /* EmotionView.m in Sources */,
+				3EC2CBF715E38E6A00545BC9 /* SVPageIndicator.m in Sources */,
+				67786EFC15E3B28E00662187 /* SVEmotionView.m in Sources */,
 				3E96354515E5C86A00D1BAA7 /* TimeTracker.m in Sources */,
 				3EFFAF6215E5EC7B0061EBE8 /* SVImageLabel.m in Sources */,
 				3EF1746C15F04ACB00B85BC5 /* TabSwitchView.m in Sources */,

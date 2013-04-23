@@ -6,20 +6,20 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ChatEmotionSelectView.h"
+#import "SVChatEmotionSelectView.h"
 #import "iCarousel.h"
-#import "ChatEmotionItemView.h"
+#import "SVChatEmotionItemView.h"
 
 #define COLUMN_CAPACITY 7
 #define ROW_CAPACITY 3
 
-@interface ChatEmotionSelectView () <iCarouselDelegate, iCarouselDataSource, ChatEmotionItemViewDelegate>
+@interface SVChatEmotionSelectView () <iCarouselDelegate, iCarouselDataSource, SVChatEmotionItemViewDelegate>
 
 @property(nonatomic, retain)iCarousel *carousel;
 
 @end
 
-@implementation ChatEmotionSelectView
+@implementation SVChatEmotionSelectView
 
 @synthesize delegate;
 @synthesize title;
@@ -130,11 +130,11 @@
 
 - (UIView *)carousel:(iCarousel *)carousel_ viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    ChatEmotionItemView *chatEmoView = nil;
+    SVChatEmotionItemView *chatEmoView = nil;
     if(view){
         chatEmoView = (id)view;
     }else{
-        chatEmoView = [[[ChatEmotionItemView alloc] initWithFrame:carousel_.bounds] autorelease];
+        chatEmoView = [[[SVChatEmotionItemView alloc] initWithFrame:carousel_.bounds] autorelease];
         chatEmoView.delegate = self;
         chatEmoView.numberOfRows = self.numberOfRows;
         chatEmoView.numberOfColumns = self.numberOfColumns;
@@ -153,7 +153,7 @@
 }
 
 #pragma mark - ChatEmotionViewDelegate
-- (UIView *)chatEmotionItemView:(ChatEmotionItemView *)chatEmotionView viewAtRow:(NSInteger)row column:(NSInteger)column
+- (UIView *)chatEmotionItemView:(SVChatEmotionItemView *)chatEmotionView viewAtRow:(NSInteger)row column:(NSInteger)column
 {
     NSInteger pageIndex = chatEmotionView.tag;
     NSInteger startIndex = pageIndex * self.numberOfRows * self.numberOfColumns;

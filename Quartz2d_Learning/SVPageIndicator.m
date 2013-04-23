@@ -6,19 +6,19 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "PageIndicator.h"
+#import "SVPageIndicator.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define NORMAL_COLOR    [UIColor lightGrayColor]
 #define HIGHLIGHT_COLOR [UIColor blackColor]
 
-@interface PageIndicator ()
+@interface SVPageIndicator ()
 
 @property(nonatomic, retain)NSMutableArray *buttonList;
 
 @end
 
-@implementation PageIndicator
+@implementation SVPageIndicator
 
 @synthesize currentPageIndex;
 @synthesize numberOfPages;
