@@ -18,6 +18,7 @@
 		3E96354515E5C86A00D1BAA7 /* TimeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E96354415E5C86A00D1BAA7 /* TimeTracker.m */; };
 		3EA104E916DC66BC007F418F /* QRFindReplaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA104E816DC66BC007F418F /* QRFindReplaceView.m */; };
 		3EAB8CF8165F6EB4004533A6 /* PureRoundImageCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB8CF7165F6EB4004533A6 /* PureRoundImageCreator.m */; };
+		3EB757A6174322A700470BBE /* SVGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB757A5174322A700470BBE /* SVGridView.m */; };
 		3EC2CAF115E34C5200545BC9 /* emotions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EC2CAF015E34C5200545BC9 /* emotions.plist */; };
 		3EC2CAF315E351C300545BC9 /* symbol.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EC2CAF215E351C300545BC9 /* symbol.plist */; };
 		3EC2CAF515E3520600545BC9 /* image.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EC2CAF415E3520600545BC9 /* image.plist */; };
@@ -246,6 +247,8 @@
 		3EA104E816DC66BC007F418F /* QRFindReplaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRFindReplaceView.m; sourceTree = "<group>"; };
 		3EAB8CF6165F6EB4004533A6 /* PureRoundImageCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureRoundImageCreator.h; sourceTree = "<group>"; };
 		3EAB8CF7165F6EB4004533A6 /* PureRoundImageCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PureRoundImageCreator.m; sourceTree = "<group>"; };
+		3EB757A4174322A700470BBE /* SVGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGridView.h; sourceTree = "<group>"; };
+		3EB757A5174322A700470BBE /* SVGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGridView.m; sourceTree = "<group>"; };
 		3EC2CAF015E34C5200545BC9 /* emotions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotions.plist; sourceTree = "<group>"; };
 		3EC2CAF215E351C300545BC9 /* symbol.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = symbol.plist; sourceTree = "<group>"; };
 		3EC2CAF415E3520600545BC9 /* image.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image.plist; sourceTree = "<group>"; };
@@ -528,6 +531,8 @@
 				3EA104E816DC66BC007F418F /* QRFindReplaceView.m */,
 				3ECB170A16FAE93200B6713B /* Sort.h */,
 				3ECB170B16FAE93200B6713B /* Sort.m */,
+				3EB757A4174322A700470BBE /* SVGridView.h */,
+				3EB757A5174322A700470BBE /* SVGridView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1106,6 +1111,7 @@
 				3ECB170F16FAFCE800B6713B /* NSOperationQueueLearn.m in Sources */,
 				3ECB171316FAFD1100B6713B /* MyOperation.m in Sources */,
 				3E2196D816FC0C46006909EC /* RoundBorderImage.m in Sources */,
+				3EB757A6174322A700470BBE /* SVGridView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

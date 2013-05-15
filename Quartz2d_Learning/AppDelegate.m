@@ -29,6 +29,7 @@
 #import "Sort.h"
 #import "NSOperationQueueLearn.h"
 #import "RoundBorderImage.h"
+#import "SVGridView.h"
 
 @interface AppDelegate () <SVChatEmotionSelectViewDelegate, SVEmotionViewDelegate, TabSwitchViewDelegate>
 
@@ -103,7 +104,7 @@
 //    NSLog(@"%@", [ChatEmotionManager emotionSymbolList]);
     UIScrollView *scrollView = [[[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)] autorelease];
     scrollView.contentSize = CGSizeMake(320, 2500);
-    [self.window addSubview:scrollView];
+//    [self.window addSubview:scrollView];
     for(NSInteger i = 0; i < 1; ++i){
         NSString *msg = [ChatEmotionManager replaceChatMessage:@"[snowman]abcde 中fg[whale] ijklmn opq rst uv>_-w中文中文中文xyz[tiger]1234567890!@#$%^&*()(^_-)a日前，有媒体报道个别城市幼儿园收费标准大幅上涨。对此，教育部负责人表示，已经对相关城市的幼儿园进行了核查，[snowman]abcde 中fg[whale] ijklmn"];
         SVImageLabel *label = [[[SVImageLabel alloc] init] autorelease];
@@ -121,6 +122,18 @@
         [label resizeToSuitableHeight];
         [scrollView addSubview:label];
     }
+    
+    SVGridView *gridView = [[[SVGridView alloc] initWithNumberOfRows:3 columns:5] autorelease];
+    gridView.backgroundColor = [UIColor darkGrayColor];
+    gridView.frame = CGRectMake(20, 40, 280, 280);
+    [gridView setItemViewBlock:^UIView *(NSInteger index) {
+        UILabel *label = [[UILabel new] autorelease];
+        label.backgroundColor = [UIColor clearColor];
+        label.text = [NSString stringWithFormat:@"%d", index];
+        
+        return label;
+    }];
+    [self.window addSubview:gridView];
     
     return YES;
 }
